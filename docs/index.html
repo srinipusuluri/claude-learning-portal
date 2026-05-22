@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude AI Products & Certifications Portal</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1'/%3E%3Cstop offset='100%25' style='stop-color:%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='url(%23grad)'/%3E%3Ctext x='50' y='68' font-family='Arial' font-size='50' font-weight='bold' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+/* ===== CSS Variables - Vibrant Color System ===== */
+:root {
+  /* Primary Colors - Vibrant Blue-Purple Gradient */
+  --primary-50: #eef2ff;
+  --primary-100: #e0e7ff;
+  --primary-200: #c7d2fe;
+  --primary-300: #a5b4fc;
+  --primary-400: #818cf8;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --primary-700: #4338ca;
+  --primary-800: #3730a3;
+  --primary-900: #312e81;
+
+  /* Accent Colors */
+  --accent-pink: #ec4899;
+  --accent-pink-light: #fce7f3;
+  --accent-cyan: #06b6d4;
+  --accent-cyan-light: #ecfeff;
+  --accent-orange: #f97316;
+  --accent-orange-light: #fff7ed;
+  --accent-green: #10b981;
+  --accent-green-light: #ecfdf5;
+  --accent-yellow: #f59e0b;
+  --accent-yellow-light: #fffbeb;
+
+  /* Neutral Colors */
+  --gray-50: #fafafa;
+  --gray-100: #f4f4f5;
+  --gray-200: #e4e4e7;
+  --gray-300: #d4d4d8;
+  --gray-400: #a1a1aa;
+  --gray-500: #71717a;
+  --gray-600: #52525b;
+  --gray-700: #3f3f46;
+  --gray-800: #27272a;
+  --gray-900: #18181b;
+
+  /* Semantic Colors */
+  --color-text-primary: #1e1b4b;
+  --color-text-secondary: #4c1d95;
+  --color-text-tertiary: #6b7280;
+  --color-text-info: #4338ca;
+  --color-text-success: #047857;
+  --color-text-warning: #c2410c;
+
+  /* Background Colors */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f8fafc;
+  --color-background-info: #e0e7ff;
+  --color-background-success: #d1fae5;
+  --color-background-warning: #ffedd5;
+
+  /* Border Colors */
+  --color-border-primary: #e2e8f0;
+  --color-border-secondary: #cbd5e1;
+  --color-border-tertiary: #e5e7eb;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+
+  /* Spacing */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 20px;
+  --border-radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(99, 102, 241, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(99, 102, 241, 0.1), 0 2px 4px -1px rgba(99, 102, 241, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 10px 10px -5px rgba(99, 102, 241, 0.04);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
+}
+
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e0e7ff 25%, #fce7f3 50%, #ecfeff 75%, #f5f7fa 100%);
+  background-attachment: fixed;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ===== Header ===== */
+.portal-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.portal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-500), var(--accent-pink), var(--accent-cyan));
+  border-radius: var(--border-radius-full);
+}
+
+.portal-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-600), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.portal-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== Tab Bar ===== */
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 1.25rem;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 2rem;
+  position: sticky;
+  top: 1rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 100;
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border-radius: var(--border-radius-full);
+  border: 1.5px solid var(--color-border-secondary);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  background: var(--primary-50);
+  color: var(--primary-600);
+  border-color: var(--primary-300);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  border-color: var(--primary-500);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(99, 102, 241, 0.3);
+  transform: translateY(-1px);
+}
+
+.tab-btn i {
+  font-size: 15px;
+}
+
+/* ===== Panels ===== */
+.panel {
+  display: none;
+  padding: 0;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.panel.active {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Section Label ===== */
+.section-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-600);
+  margin-bottom: 1.25rem;
+  padding-left: 4px;
+  position: relative;
+}
+
+.section-label::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 16px;
+  background: linear-gradient(180deg, var(--primary-500), var(--accent-pink));
+  border-radius: var(--border-radius-full);
+}
+
+/* ===== Reference List ===== */
+.ref-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: white;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-primary);
+}
+
+.ref-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-tertiary);
+  transition: background 0.2s ease;
+}
+
+.ref-item:last-child {
+  border-bottom: none;
+}
+
+.ref-item:hover {
+  background: linear-gradient(90deg, var(--primary-50), transparent);
+}
+
+.ref-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.ref-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+.ref-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ===== Badges ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--border-radius-full);
+  letter-spacing: 0.02em;
+  transition: transform 0.2s ease;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+}
+
+.badge-official {
+  background: linear-gradient(135deg, var(--primary-100), var(--primary-200));
+  color: var(--primary-700);
+  border: 1px solid var(--primary-300);
+}
+
+.badge-free {
+  background: linear-gradient(135deg, var(--accent-green-light), #a7f3d0);
+  color: var(--color-text-success);
+  border: 1px solid #6ee7b7;
+}
+
+.badge-new {
+  background: linear-gradient(135deg, var(--accent-orange-light), #fed7aa);
+  color: var(--color-text-warning);
+  border: 1px solid #fdba74;
+}
+
+.badge-beta {
+  background: var(--gray-100);
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+}
+
+/* ===== Open Button ===== */
+.open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--border-radius-full);
+  border: 1.5px solid var(--primary-300);
+  background: linear-gradient(135deg, var(--primary-50), white);
+  color: var(--primary-600);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  align-self: center;
+  height: 36px;
+}
+
+.open-btn:hover {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  border-color: var(--primary-500);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.open-btn:active {
+  transform: translateY(0);
+}
+
+.open-btn i {
+  font-size: 14px;
+}
+
+/* ===== Info Banner ===== */
+.info-banner {
+  background: linear-gradient(135deg, var(--primary-50), var(--accent-pink-light));
+  border-radius: var(--border-radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 13px;
+  color: var(--color-text-info);
+  line-height: 1.7;
+  border: 1px solid var(--primary-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-banner strong {
+  font-weight: 700;
+  color: var(--primary-700);
+}
+
+/* ===== Q&A Accordion ===== */
+.qa-item {
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.qa-item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-200);
+}
+
+.qa-q {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  user-select: none;
+  color: var(--color-text-primary);
+  transition: background 0.2s ease;
+  line-height: 1.5;
+}
+
+.qa-q:hover {
+  background: var(--primary-50);
+}
+
+.qa-chevron {
+  font-size: 18px;
+  color: var(--primary-400);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.qa-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.qa-a.open {
+  max-height: 800px;
+}
+
+.qa-a-inner {
+  padding: 0 1.25rem 1rem;
+  border-top: 1px solid var(--color-border-tertiary);
+  background: var(--gray-50);
+}
+
+.qa-a code {
+  background: linear-gradient(135deg, var(--primary-100), var(--accent-cyan-light));
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--primary-700);
+  border: 1px solid var(--primary-200);
+}
+
+.qa-a strong {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* ===== Filter Row ===== */
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.filter-btn {
+  padding: 6px 14px;
+  border-radius: var(--border-radius-full);
+  border: 1.5px solid var(--color-border-secondary);
+  background: white;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-300);
+  color: var(--primary-600);
+  background: var(--primary-50);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  border-color: var(--primary-500);
+  color: white;
+  box-shadow: var(--shadow-sm), 0 0 12px rgba(99, 102, 241, 0.25);
+}
+
+/* ===== Domain Grid ===== */
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+
+.domain-card {
+  background: white;
+  border-radius: var(--border-radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-primary);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.domain-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--accent-pink), var(--accent-cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--primary-300);
+}
+
+.domain-card:hover::before {
+  opacity: 1;
+}
+
+.domain-pct {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-600), var(--accent-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.domain-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: 4px;
+}
+
+.domain-desc {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ===== Disclaimer ===== */
+.disclaimer {
+  font-size: 12px;
+  color: var(--gray-600);
+  padding: 1rem 1.25rem;
+  background: var(--gray-100);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 1rem;
+  border-left: 3px solid var(--accent-yellow);
+  line-height: 1.6;
+}
+
+.disclaimer strong {
+  color: var(--gray-800);
+}
+
+/* ===== Code inline ===== */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--primary-700);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 1rem 3rem;
+  }
+
+  .portal-header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .portal-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .portal-header p {
+    font-size: 0.95rem;
+  }
+
+  .tab-bar {
+    top: 0.5rem;
+    padding: 0.75rem;
+    gap: 6px;
+  }
+
+  .tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .tab-btn i {
+    display: none;
+  }
+
+  .ref-item {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .open-btn {
+    align-self: start;
+  }
+
+  .domain-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+  }
+
+  .qa-q {
+    padding: 0.875rem 1rem;
+    font-size: 13px;
+  }
+
+  .qa-a-inner {
+    padding: 0 1rem 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .filter-row {
+    gap: 6px;
+  }
+
+  .filter-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary-300), var(--primary-500));
+  border-radius: var(--border-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--primary-400), var(--primary-600));
+}
+
+/* ===== Selection ===== */
+::selection {
+  background: var(--primary-200);
+  color: var(--primary-900);
+}
+
+/* ===== Animated Background Orbs (subtle) ===== */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  width: 400px;
+  height: 400px;
+  background: var(--primary-400);
+  top: -100px;
+  right: -100px;
+  animation: float1 20s ease-in-out infinite;
+}
+
+body::after {
+  width: 350px;
+  height: 350px;
+  background: var(--accent-pink);
+  bottom: -50px;
+  left: -50px;
+  animation: float2 25s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-50px, 50px); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(50px, -30px); }
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 4rem;
+  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(99, 102, 241, 0.1);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-400);
+  box-shadow: var(--shadow-md), 0 0 20px rgba(99, 102, 241, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  object-fit: cover;
+}
+
+.footer-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(99, 102, 241, 0.5);
+}
+
+.footer-text {
+  text-align: left;
+}
+
+.footer-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-500);
+  margin-bottom: 2px;
+}
+
+.footer-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 4px;
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--primary-600);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 3px 8px;
+  border-radius: var(--border-radius-sm);
+}
+
+.footer-link:hover {
+  background: var(--primary-50);
+  color: var(--primary-700);
+}
+
+.footer-link i {
+  font-size: 14px;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-200), var(--accent-pink), var(--primary-200), transparent);
+  margin: 1.25rem 0 1rem;
+  border: none;
+}
+
+.footer-copyright {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+
+  .footer-avatar {
+    width: 48px;
+    height: 48px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Claude AI Products and Certifications Portal — navigate by section using the tabs below</h2>
+
+<div class="portal-header">
+  <h1>Claude AI products & certifications portal</h1>
+  <p>Official documentation, learning paths, certifications, videos, and interview prep — all in one place.</p>
+</div>
+
+<div class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-panel="products"><i class="ti ti-layout-grid" aria-hidden="true"></i> Products</button>
+  <button class="tab-btn" data-panel="docs"><i class="ti ti-book" aria-hidden="true"></i> Documentation</button>
+  <button class="tab-btn" data-panel="learning"><i class="ti ti-school" aria-hidden="true"></i> Learning</button>
+  <button class="tab-btn" data-panel="certs"><i class="ti ti-certificate" aria-hidden="true"></i> Certifications</button>
+  <button class="tab-btn" data-panel="videos"><i class="ti ti-player-play" aria-hidden="true"></i> Videos</button>
+  <button class="tab-btn" data-panel="interview"><i class="ti ti-message-question" aria-hidden="true"></i> Interview Q&A</button>
+  <button class="tab-btn" data-panel="certqa"><i class="ti ti-clipboard-check" aria-hidden="true"></i> Cert Practice</button>
+  <button class="tab-btn" data-panel="community"><i class="ti ti-users" aria-hidden="true"></i> Community</button>
+</div>
+
+<!-- PRODUCTS -->
+<div class="panel active" id="panel-products">
+  <p class="section-label">Claude models & product surfaces</p>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Opus 4.7</div>
+        <div class="ref-desc">Most capable Claude model. Best for complex reasoning, long-horizon agentic coding, vision, and memory-intensive tasks. Available via API, Bedrock, Vertex AI, and Microsoft Foundry.</div>
+        <div class="ref-meta"><span class="badge badge-new">Latest</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/claude/opus"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Sonnet 4.6</div>
+        <div class="ref-desc">Frontier intelligence at scale — ideal balance of intelligence and speed for most production workloads, agents, and enterprise coding. Model ID: <code>claude-sonnet-4-6</code>.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/claude/sonnet"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Haiku 4.5</div>
+        <div class="ref-desc">Fastest model with near-frontier intelligence. Ideal for high-throughput classification, routing, simple extraction, and sub-agent roles. Model ID: <code>claude-haiku-4-5-20251001</code>.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/claude/haiku"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude.ai — web, mobile & desktop app</div>
+        <div class="ref-desc">The main consumer chat interface for Claude. Includes projects, artifacts, skills, research mode, and connectors. Free and Pro tiers available.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://claude.ai"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude API & platform</div>
+        <div class="ref-desc">Build production applications — direct Messages API access or managed agent infrastructure via the Agents SDK. Access through Anthropic Console, Amazon Bedrock, Google Vertex AI, and Microsoft Foundry.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/api"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Code — agentic CLI coding tool</div>
+        <div class="ref-desc">Terminal-based AI agent that reads, writes, and runs code. Works inside VS Code, JetBrains, and the web/desktop app. Install: <code>npm install -g @anthropic-ai/claude-code</code>.</div>
+        <div class="ref-meta"><span class="badge badge-new">New</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/claude-code"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude in Chrome (browsing agent)</div>
+        <div class="ref-desc">Beta browser extension that lets Claude navigate and act on web pages on your behalf.</div>
+        <div class="ref-meta"><span class="badge badge-beta">Beta</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/news/claude-for-chrome"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude in Excel (spreadsheet agent)</div>
+        <div class="ref-desc">Beta product that analyzes, transforms, and builds Excel models through natural language.</div>
+        <div class="ref-meta"><span class="badge badge-beta">Beta</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/news/claude-for-excel"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Cowork (desktop automation)</div>
+        <div class="ref-desc">Beta desktop agent for non-developers — automates file management and multi-step tasks across your computer.</div>
+        <div class="ref-meta"><span class="badge badge-beta">Beta</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/news"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Console (developer workbench)</div>
+        <div class="ref-desc">Browser-based environment to prototype prompts, manage API keys, and view usage. Includes a prompt generator and improver.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://console.anthropic.com"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- DOCUMENTATION -->
+<div class="panel" id="panel-docs">
+  <p class="section-label">Official Anthropic documentation — bookmark these</p>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">docs.claude.com — API docs home</div>
+        <div class="ref-desc">The main developer documentation hub. Quickstarts, SDK guides, API reference, agent patterns, tool use, and more.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Models overview</div>
+        <div class="ref-desc">Compare Opus 4.7, Sonnet 4.6, Haiku 4.5 — pricing, context windows, knowledge cutoffs, and which cloud platforms support each model.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/about-claude/models/overview"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Intro to Claude</div>
+        <div class="ref-desc">Start here — overview of capabilities, use cases, and architecture. Summarizes what Claude excels at across text, code, vision, and agents.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/intro"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Prompt engineering overview</div>
+        <div class="ref-desc">Foundation guide — clarity, XML structure, role prompting, few-shot examples, and chain-of-thought. Links to the interactive tutorial and Google Sheets version.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Prompting best practices (Claude 4.x)</div>
+        <div class="ref-desc">The single living reference for prompt engineering with Opus 4.7, Opus 4.6, Sonnet 4.6, and Haiku 4.5. Covers foundational techniques, extended thinking, tool use, and agentic systems.</div>
+        <div class="ref-meta"><span class="badge badge-new">Updated</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-prompting-best-practices"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Tool use (function calling)</div>
+        <div class="ref-desc">Full guide to defining tools with JSON schemas, handling tool_use and tool_result blocks, and building agentic loops with Claude.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/tool-use"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Prompt caching</div>
+        <div class="ref-desc">Learn to mark stable prompt prefixes (system prompts, documents, tool definitions) with cache breakpoints to reduce cost and latency.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/prompt-caching"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Code documentation</div>
+        <div class="ref-desc">Installation, CLAUDE.md, hooks, sub-agents, IDE integrations, MCP setup, permissions, and the Claude Code SDK.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/claude-code/overview"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Model Context Protocol (MCP) — spec</div>
+        <div class="ref-desc">Open standard for connecting AI agents to external tools and data sources. Covers tools, resources, prompts, stdio / SSE / HTTP transports.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://modelcontextprotocol.io/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">MCP connector — Messages API</div>
+        <div class="ref-desc">Connect to remote MCP servers directly from the Anthropic Messages API without running a separate MCP client process.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/agents-and-tools/mcp-connector"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Cookbook (GitHub)</div>
+        <div class="ref-desc">Jupyter notebooks with production-ready patterns — RAG, embeddings, PDF processing, vision, tool use, and more.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://github.com/anthropics/anthropic-cookbook"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Prompt library — official examples</div>
+        <div class="ref-desc">Curated gallery of production-quality prompts from Anthropic covering dozens of real-world tasks and use cases.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/resources/prompt-library"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Batch API</div>
+        <div class="ref-desc">Submit bulk requests at ~50% lower cost. Ideal for evaluations, data labeling, offline pipelines, and non-latency-sensitive workloads.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/batch-api"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude's constitution (model spec)</div>
+        <div class="ref-desc">Anthropic's detailed specification of Claude's values, behavior, and priorities. The final authority on how Claude thinks and acts.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/constitution"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude support center</div>
+        <div class="ref-desc">Account management, billing, troubleshooting, feature how-tos, and FAQs for claude.ai users.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://support.claude.com"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- LEARNING -->
+<div class="panel" id="panel-learning">
+  <p class="section-label">Structured courses and interactive learning paths</p>
+  <div class="info-banner">
+    <strong>Anthropic Academy</strong> launched March 2026 — 13+ free, self-paced courses hosted on Skilljar. No Anthropic account needed, just a Skilljar email signup. Every course issues an official completion certificate you can add to LinkedIn.
+  </div>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Academy — learning hub</div>
+        <div class="ref-desc">Central portal with three tracks: Build with Claude (API/developers), Claude for Work (teams & enterprise), Claude for Personal (productivity & creativity).</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/learn"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Skilljar — full course catalog</div>
+        <div class="ref-desc">All Anthropic Academy courses: Claude 101, AI Fluency, Building with the Claude API, Claude Code in Action, Introduction to MCP, MCP Advanced Topics, Agent Skills, Subagents, and Cowork.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">AI Fluency: Framework & Foundations</div>
+        <div class="ref-desc">Flagship course by Anthropic with academic partners from UCC and Ringling College. Teaches effective, ethical, efficient, and safe AI collaboration using the 4D AI Fluency Framework.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/ai-fluency"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Building with the Claude API (Skilljar)</div>
+        <div class="ref-desc">Comprehensive course covering the Claude API end-to-end — authentication, messages, tool use, streaming, structured outputs, prompt caching, and batch API.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Code in Action (Skilljar)</div>
+        <div class="ref-desc">Hands-on course integrating Claude Code into developer workflows — CLAUDE.md setup, hooks, sub-agents, MCP servers, GitHub integration, and CI/CD automation.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Introduction to Model Context Protocol (Skilljar)</div>
+        <div class="ref-desc">Build MCP servers and clients from scratch in Python. Covers the three core MCP primitives — tools, resources, and prompts — and how to connect Claude to external services.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">MCP Advanced Topics (Skilljar)</div>
+        <div class="ref-desc">Production MCP server patterns — sampling, notifications, file system access, transport mechanisms, and OAuth integration.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Introduction to Agent Skills (Skilljar)</div>
+        <div class="ref-desc">Create, configure, and share reusable markdown-based skills in Claude Code that Claude automatically applies to the right task.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic GitHub courses (5 deep-dive modules)</div>
+        <div class="ref-desc">Official Jupyter notebook courses: (1) API fundamentals, (2) Prompt engineering interactive tutorial, (3) Real-world prompting, (4) Prompt evaluations, (5) Tool use. Recommended in sequence.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://github.com/anthropics/courses"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Quickstarts (GitHub)</div>
+        <div class="ref-desc">Ready-to-fork starter applications — customer support bot, document Q&A, and other production templates built on the Claude API.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://github.com/anthropics/anthropic-quickstarts"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Prompt engineering interactive tutorial (GitHub)</div>
+        <div class="ref-desc">Anthropic's step-by-step interactive notebook covering all core prompting techniques with exercises. Available in standard and AWS Workshop versions.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://github.com/anthropics/prompt-eng-interactive-tutorial"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">DeepLearning.AI short courses</div>
+        <div class="ref-desc">Andrew Ng's platform hosts short courses co-created with Anthropic — covers prompt engineering, building with Claude, and agentic AI applications.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.deeplearning.ai/short-courses/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Coursera — Claude & Anthropic courses</div>
+        <div class="ref-desc">Search Coursera for Claude/Anthropic specializations including guided projects on building AI applications.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.coursera.org/search?query=claude+anthropic"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- CERTIFICATIONS -->
+<div class="panel" id="panel-certs">
+  <p class="section-label">Official Anthropic credentials and partner programs</p>
+  <div class="info-banner">
+    <strong>Claude Certified Architect (CCA) — Foundations</strong> launched March 12, 2026. It's Anthropic's first official, proctored technical certification — 60 questions across 5 domains. Join the Partner Network free at anthropic.com/partners to access the exam.
+  </div>
+
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Certified Architect — Foundations (CCA)</div>
+        <div class="ref-desc">Proctored 60-question exam testing production-grade Claude application design. Delivered via Skilljar. First 5,000 Partner Network members get early access at no cost. More tiers (Seller, Developer, Advanced) confirmed for later 2026.</div>
+        <div class="ref-meta"><span class="badge badge-new">Launched Mar 2026</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/partners"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Partner Network — join free</div>
+        <div class="ref-desc">Free for any organization bringing Claude to market. Benefits include CCA exam access, Anthropic Academy materials, sales playbooks, co-marketing support, and dedicated technical architecture resources. Backed by $100M Anthropic investment.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free to join</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/partners"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Academy completion certificates</div>
+        <div class="ref-desc">Every Skilljar course issues an official Anthropic-branded completion certificate you can post directly to LinkedIn. Certificates are distinct from the CCA exam credential.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://anthropic.skilljar.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Certifications study site (community)</div>
+        <div class="ref-desc">Unofficial but well-regarded community site with free study guides, 25+ practice questions, video playlists, and a 12-week study plan for the CCA exam.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://claudecertifications.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Deloitte × Anthropic certification program</div>
+        <div class="ref-desc">Enterprise program as part of Deloitte's $1.4B Project 120 investment — hands-on Claude certification for Deloitte practitioners and alliance partners.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.deloitte.com/us/en/about/press-room/deloitte-and-anthropic-launch-certification-program.html"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">AWS Certified AI Practitioner (complementary)</div>
+        <div class="ref-desc">Covers Claude on Amazon Bedrock, responsible AI, and generative AI fundamentals. A strong companion credential to the CCA for cloud-focused professionals.</div>
+      </div>
+      <button class="open-btn" data-url="https://aws.amazon.com/certification/certified-ai-practitioner/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+  </div>
+
+  <p class="section-label" style="margin-top:2rem">CCA foundations — exam domain breakdown</p>
+  <div class="domain-grid">
+    <div class="domain-card">
+      <div class="domain-pct">~25%</div>
+      <div class="domain-name">Agentic architecture</div>
+      <div class="domain-desc">Multi-step agent design, tool orchestration, error handling, evaluations</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-pct">~20%</div>
+      <div class="domain-name">Claude Code & config</div>
+      <div class="domain-desc">CLAUDE.md, hooks, sub-agents, MCP setup, permissions, IDE integration</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-pct">~20%</div>
+      <div class="domain-name">Claude API & SDKs</div>
+      <div class="domain-desc">Messages API, streaming, structured outputs, prompt caching, Batch API</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-pct">~20%</div>
+      <div class="domain-name">Prompt engineering</div>
+      <div class="domain-desc">XML structure, few-shot, chain-of-thought, role prompting, output control</div>
+    </div>
+    <div class="domain-card">
+      <div class="domain-pct">~15%</div>
+      <div class="domain-name">Cost & system design</div>
+      <div class="domain-desc">Token economics, context windows, model selection, rate limits, caching</div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEOS -->
+<div class="panel" id="panel-videos">
+  <p class="section-label">Official channels, playlists, and curated tutorials</p>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic official YouTube channel</div>
+        <div class="ref-desc">Product launches, research talks, Claude announcements, developer deep dives, and safety discussions — directly from Anthropic.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/@anthropic-ai"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic playlists</div>
+        <div class="ref-desc">Curated playlists by topic — Claude Code tutorials, MCP walkthroughs, prompt engineering guides, and agent demonstrations.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/@anthropic-ai/playlists"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude API tutorials playlist</div>
+        <div class="ref-desc">Anthropic-curated playlist covering API integration, tool use, streaming, and application building.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/playlist?list=PLmkaw6oRnRv9z0Qk79EcMrthofqpoHMxG"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Code for beginners — full course</div>
+        <div class="ref-desc">Comprehensive free tutorial on integrating Claude Code into development workflows — covers scaffolding, context management, MCP, and sub-agents.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/watch?v=gh2_PhgZGsM"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude AI step-by-step tutorial (2026)</div>
+        <div class="ref-desc">Beginner-friendly walkthrough of Claude.ai — projects, artifacts, skills, research mode, and connectors. Good starting point for new users.</div>
+        <div class="ref-meta"><span class="badge badge-free">Free</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/watch?v=-xEF5WrdIWs"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Search: latest Claude tutorials (2026)</div>
+        <div class="ref-desc">Live YouTube search for the most recent community tutorials — always up to date with newest features.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/results?search_query=claude+ai+tutorial+2026"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Search: Claude Code tutorials</div>
+        <div class="ref-desc">YouTube search results for Claude Code — installation, workflow integration, hooks, sub-agents, and MCP walkthroughs.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/results?search_query=claude+code+tutorial+2026"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Search: Model Context Protocol tutorials</div>
+        <div class="ref-desc">MCP server setup, client integration, and tool connection walkthroughs from the community.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/results?search_query=model+context+protocol+claude+tutorial"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Search: Claude prompt engineering</div>
+        <div class="ref-desc">Latest videos on prompting techniques — XML structure, chain-of-thought, few-shot, and production prompt patterns.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/results?search_query=claude+anthropic+prompt+engineering+2026"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Search: Claude CCA certification prep</div>
+        <div class="ref-desc">Community study videos and walkthroughs for the Claude Certified Architect Foundations exam.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.youtube.com/results?search_query=claude+certified+architect+certification+exam+prep"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- INTERVIEW Q&A -->
+<div class="panel" id="panel-interview">
+  <p class="section-label">Sample interview questions — click any question to expand the answer</p>
+  <div class="filter-row">
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn" data-cat="api">API</button>
+    <button class="filter-btn" data-cat="prompt">Prompt engineering</button>
+    <button class="filter-btn" data-cat="code">Claude Code</button>
+    <button class="filter-btn" data-cat="mcp">MCP</button>
+    <button class="filter-btn" data-cat="agent">Agents</button>
+  </div>
+  <div id="interviewQA">
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">1. What's the difference between Opus, Sonnet, and Haiku — and how do you choose? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner"><strong>Opus</strong> is the most capable — pick it for complex reasoning, long-horizon agentic work, and deep coding tasks. <strong>Sonnet</strong> balances intelligence and cost — the default for most production workloads and agents. <strong>Haiku</strong> is fastest and cheapest — ideal for classification, routing, and sub-agent roles. Strategy: start with Sonnet, escalate to Opus where evals show quality gaps, downgrade to Haiku where latency or cost dominates.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">2. How does prompt caching work and when should you use it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Mark stable prefix content — system instructions, large documents, tool definitions — with a <code>cache_control</code> breakpoint. Anthropic stores that prefix server-side and serves later requests with the same prefix at reduced input token cost and lower latency. Use it whenever you have repeated large context: RAG systems, agentic loops with stable tool schemas, and multi-turn chats with fixed system prompts. Cache TTL is 5 minutes by default, refreshed on each hit.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">3. Why does Anthropic recommend XML tags in prompts? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Claude is trained to treat XML as semantic structure. Wrapping content in tags like <code><document></code>, <code><examples></code>, <code><instructions></code> clearly separates context, examples, task, and output requirements. This reduces ambiguity, improves instruction following, and makes outputs easier to parse programmatically when you ask Claude to respond inside specific tags.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">4. How do you reduce hallucinations in Claude's outputs? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Compound several techniques: (1) provide source material in the prompt and instruct Claude to cite it, (2) give Claude explicit permission to say "I don't know," (3) ask it to reason step-by-step before answering, (4) enable extended thinking for complex reasoning, (5) ground claims via retrieval, (6) run judge-model evals and tune. The strongest intervention is usually giving Claude the information it needs rather than relying on parametric memory.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">5. What's the difference between system messages and user messages? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">The <code>system</code> parameter sets persistent behavior, role, constraints, and tone — outside the messages array. The <code>messages</code> array holds alternating user/assistant turns. Best practice: stable instructions, persona, output format, and policies go in <code>system</code>; actual tasks, data, and conversation history go in <code>messages</code>. System content also caches well.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">6. What is CLAUDE.md and why does it matter? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner"><code>CLAUDE.md</code> is a project memory file Claude Code reads automatically at session start. Put your project's architecture, coding conventions, key directories, important commands, and team rules inside it. Every new conversation begins with this context loaded — eliminating repetitive setup. A user-level file lives at <code>~/.claude/CLAUDE.md</code>; project-level files override user-level.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">7. How do you optimize token usage in long Claude Code sessions? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Use <code>/compact</code> to summarize prior context instead of <code>/clear</code> when you want to keep a thread. Write precise prompts targeting specific files. Move recurring instructions into <code>CLAUDE.md</code>. Limit simultaneously enabled MCP servers — too many tool definitions can shrink usable context from 200K to under 100K tokens. Use sub-agents for isolated explorations that would otherwise pollute the main session.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">8. What are hooks in Claude Code and what are they used for? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Hooks are shell commands triggered by Claude Code lifecycle events — before/after a tool call, before a commit, on session start. Use them to enforce linting, run tests, log actions for audits, block dangerous commands, or notify CI systems. They're defined in <code>settings.json</code> and let you wrap Claude's autonomy in deterministic guardrails.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">9. What is Model Context Protocol (MCP)? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">MCP is an open standard for connecting AI agents to external tools and data sources. An MCP server exposes tools, resources, and prompts; a client (Claude Code, the API's MCP connector, or the Claude.ai interface) discovers and calls them. Transports include stdio (local processes), SSE, and HTTP. It eliminates one-off integrations — any MCP-compliant server works with any MCP-compliant client.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">10. How would you secure an MCP server in production? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Treat MCP servers like any privileged subprocess: install only from trusted sources, use scoped credentials with minimum required permissions, store secrets in env vars or a secrets manager (not plaintext configs), enable structured logging for all tool calls, restrict network egress, and run processes in isolated containers for high-risk integrations. Pin server versions to avoid supply-chain surprises.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">11. How would you design an agentic system with Claude? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Start with explicit success criteria. Build the tool surface (typed JSON schemas, descriptive names, narrow scope per tool). Pick a model — usually Sonnet for the orchestrator, Haiku for cheap sub-tasks. Implement the loop: prompt → model → tool call → execute → feed result back → repeat until done or max iterations. Add guardrails: step cap, cost ceiling, timeout, observability. Write evals before you scale. Parallelize with sub-agents.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">12. What are sub-agents and when should you use them? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Sub-agents are isolated Claude instances with their own context window, spawned via the Task tool to handle a sub-task, returning only the useful result. Use them for codebase exploration, code review, parallel research, or any work that would bloat the main session. Define them in <code>.claude/agents/*.md</code> with their own system prompt, tool restrictions, and permission mode.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">13. How do you handle rate limits and retries? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Implement exponential backoff with jitter on 429 and 5xx responses. Respect the <code>retry-after</code> header. Use the Batch API for non-real-time workloads — ~50% cheaper and on a separate quota. Spread load across model tiers. Cache stable prefixes to reduce token throughput. Monitor API usage per key to catch runaway loops early.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">14. How do you defend against prompt injection? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Treat all untrusted input (user messages, web content, file contents, tool outputs) as data, not instructions. Wrap it in XML tags and explicitly tell Claude not to treat content inside <code><untrusted></code> as instructions. Constrain tools — never give destructive actions without human-in-the-loop confirmation. Use allow-lists for URLs and commands. Run evals with adversarial test cases. For high-stakes apps, add a classifier to flag suspicious inputs before they reach Claude.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">15. How does extended thinking work and when should you enable it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Extended thinking gives Claude a dedicated internal reasoning budget before producing its final answer. Set a <code>thinking.budget_tokens</code> parameter to control how long Claude reasons. Use it for tasks that benefit from deeper deliberation: hard math, complex logic, multi-step planning, or any situation where chain-of-thought alone isn't sufficient. Not recommended for simple tasks — it adds latency and cost.</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CERT PRACTICE -->
+<div class="panel" id="panel-certqa">
+  <p class="section-label">CCA foundations — practice questions (click to reveal answers)</p>
+  <div class="disclaimer">These are unofficial study questions modeled on official exam domains. Study the <strong>Anthropic Academy courses</strong> and <strong>docs.claude.com</strong> as your authoritative source.</div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q1. Your customer-support agent handles 10K live conversations/day with a stable 5K-token system prompt. Which single feature most reduces your API cost? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Prompt caching.</strong> Mark the stable system prompt (and tool definitions) with a <code>cache_control</code> breakpoint. Cache hits dramatically reduce input token cost. The Batch API is cheaper still but only for async/offline workloads — live customer support requires real-time responses.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q2. Which file does Claude Code automatically load at session start to provide project context? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: <code>CLAUDE.md</code>.</strong> Claude Code reads <code>CLAUDE.md</code> from the project root (and <code>~/.claude/CLAUDE.md</code> at user scope) at session start. It's the canonical location for conventions, architecture notes, and standing instructions.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q3. What's the correct way to connect a remote MCP server directly via the Anthropic Messages API? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Use the MCP connector with the beta header <code>anthropic-beta: mcp-client-2025-11-20</code></strong> and pass the server URL in the <code>mcp_servers</code> parameter. This connects to remote MCP servers without needing a separate MCP client process running locally.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q4. You're using Claude as a grader to evaluate another Claude's responses. What should you ask the grader to return for reliable scores? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Strengths, weaknesses, detailed reasoning, and a numerical score.</strong> Bare numbers produce near-random results. Requiring written justification forces the grader to engage with the content, producing consistent, defensible scores. This is the pattern Anthropic's evaluation guidance recommends.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q5. Which Claude Code feature delegates a sub-task to an isolated context window that returns only its output? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Sub-agents.</strong> Defined in <code>.claude/agents/*.md</code> with their own system prompt, tool restrictions, and permission mode. Activated via the <code>/agents</code> command or the Task tool. They run with an independent context window and return only the useful result to the main session.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q6. What's the most effective way to show Claude exactly what output format you want? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Few-shot examples.</strong> Provide one or more concrete output examples, ideally wrapped in <code><example></code> tags. Concrete examples beat abstract format descriptions for adherence. Even a single high-quality example produces large gains in output consistency.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q7. Which slash command compresses Claude Code conversation history while preserving a summary? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: <code>/compact</code>.</strong> Unlike <code>/clear</code> (wipes all context), <code>/compact</code> summarizes prior turns and replaces them with the summary — typically reducing token usage 40–60% on long sessions while keeping the thread alive.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q8. You need Claude Code to query a private Postgres database. What's the architecturally correct approach? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Build or install a Postgres MCP server that exposes database operations as MCP tools.</strong> Register it in <code>settings.json</code> at the appropriate scope (user, project, or local) with scoped credentials. This follows Anthropic's open standard and integrates cleanly with Claude Code's tool discovery.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q9. Your agentic loop is making runaway tool calls. What's the first guardrail to add? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: A maximum step / iteration cap.</strong> Pair it with a cost ceiling and timeout. Then add observability (log every tool call), evals on adversarial inputs, and human-in-the-loop confirmation for destructive or irreversible actions. Step caps are the cheapest, fastest-to-implement first line of defence.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q10. Which model is best for high-volume, low-complexity classification at the lowest cost? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Claude Haiku 4.5.</strong> Fastest and cheapest current Claude model with near-frontier intelligence — designed for high-throughput classification, routing, simple extraction, and sub-agent roles where Sonnet or Opus would be overkill.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q11. What does "tool use" mean in the Anthropic API and how does the loop work? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Tool use (function calling)</strong> lets you define JSON-schema-described tools. Claude returns a <code>tool_use</code> block when it wants to call one; your code executes the tool and feeds back a <code>tool_result</code> message. The model continues until it returns a final text answer with no further tool calls. Loop control (max turns, cost caps) is your responsibility.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q12. What's the most important practice when designing tools for an agent? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Clear, descriptive tool names and descriptions with narrow scope per tool.</strong> Claude's tool selection accuracy depends heavily on tool metadata. Avoid mega-tools that do many things. Prefer focused tools with informative descriptions and explicit input schemas. Vague or overlapping tool descriptions are the leading cause of agentic failures.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q13. How do you debug a silently failing MCP connection in Claude Code? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Launch Claude Code with <code>--mcp-debug</code> and run <code>/mcp</code> in-session</strong> to inspect server status. This surfaces handshake errors, authentication failures, and transport-level issues that aren't visible by default. Also check <code>claude mcp list</code> to verify configured servers.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q14. Where should you place a coding convention you want shared with the whole team on every Claude Code session? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: <code>CLAUDE.md</code> at the project root, committed to version control.</strong> Project-scope <code>CLAUDE.md</code> overrides user-scope and is shared via the repo — exactly the right pattern for team-wide conventions. User-scope (<code>~/.claude/CLAUDE.md</code>) is for personal preferences only.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q15. The Batch API offers what tradeoff compared to the real-time Messages API? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: ~50% lower cost in exchange for asynchronous, non-real-time completion.</strong> Submit a batch of requests; results return within a service window (up to 24 hours). Ideal for offline pipelines, evaluations, bulk data analysis, and labeling tasks where immediate responses aren't needed.</div></div>
+  </div>
+
+</div>
+
+<!-- COMMUNITY -->
+<div class="panel" id="panel-community">
+  <p class="section-label">Stay current — official channels, community, and ecosystem</p>
+  <div class="ref-list">
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic news & announcements</div>
+        <div class="ref-desc">Official blog — product launches, research papers, safety updates, and company news. The primary source for what's new.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/news"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic research</div>
+        <div class="ref-desc">Published papers on safety, interpretability, model capabilities, and AI alignment from the Anthropic research team.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/research"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic on GitHub</div>
+        <div class="ref-desc">Official repos: Python & TypeScript SDKs, Anthropic Cookbook, Claude Code, courses, quickstarts, and Claude Code plugins directory.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://github.com/anthropics"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic on X / Twitter</div>
+        <div class="ref-desc">Real-time product news, research highlights, and team updates from @AnthropicAI.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://twitter.com/AnthropicAI"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic on LinkedIn</div>
+        <div class="ref-desc">Company updates, hiring announcements, and ecosystem news from Anthropic's official LinkedIn page.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.linkedin.com/company/anthropic"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">r/ClaudeAI (Reddit)</div>
+        <div class="ref-desc">Active community forum — tips, showcases, troubleshooting, and discussion of Claude features and use cases.</div>
+      </div>
+      <button class="open-btn" data-url="https://www.reddit.com/r/ClaudeAI/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Model Context Protocol community</div>
+        <div class="ref-desc">MCP ecosystem — community-built servers, discussion of the protocol spec, and integration patterns.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://modelcontextprotocol.io/community"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic API status</div>
+        <div class="ref-desc">Real-time status for the Claude API, claude.ai, and associated services. Bookmark this for outage monitoring.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://status.anthropic.com/"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic Transparency Hub</div>
+        <div class="ref-desc">Training data cutoff dates, usage policies, third-party audits, and model card details.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/transparency"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Anthropic usage policies</div>
+        <div class="ref-desc">Acceptable use policy covering what you can and cannot build with the Claude API and claude.ai.</div>
+        <div class="ref-meta"><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/legal/aup"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const panels = document.querySelectorAll('.panel');
+tabs.forEach(t => {
+  t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    panels.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-' + t.dataset.panel).classList.add('active');
+  });
+});
+
+document.querySelectorAll('.qa-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const ans = q.nextElementSibling;
+    const icon = q.querySelector('.qa-chevron');
+    const open = ans.classList.toggle('open');
+    icon.style.transform = open ? 'rotate(180deg)' : '';
+  });
+});
+
+document.querySelectorAll('.filter-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const cat = b.dataset.cat;
+    document.querySelectorAll('#interviewQA .qa-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'block' : 'none';
+    });
+  });
+});
+
+document.querySelectorAll('.open-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const url = btn.dataset.url;
+    if (url) window.open(url, '_blank', 'noopener');
+  });
+});
+</script>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQH3ARFIe5-gLw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1689609808020?e=1781136000&v=beta&t=sMyjJaocfh4yo2drlR2jbvXEG3WKeCo0KFQdB_RmiAA" alt="Srinivasa Putuluri" class="footer-avatar">
+    <div class="footer-text">
+      <div class="footer-label">Prepared by</div>
+      <div class="footer-name">Srinivasa Putuluri</div>
+      <a href="https://www.linkedin.com/in/pusulurisrinivasa/" class="footer-link" target="_blank" rel="noopener">
+        <i class="ti ti-brand-linkedin"></i>
+        Connect on LinkedIn
+      </a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <p class="footer-copyright">
+    &copy; 2026 Claude AI Products & Certifications Portal. All rights reserved.
+  </p>
+</footer>
+
+</div>
+</body>
+</html>
