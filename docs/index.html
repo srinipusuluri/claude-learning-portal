@@ -881,17 +881,26 @@ body::after {
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Claude Opus 4.7</div>
-        <div class="ref-desc">Most capable Claude model. Best for complex reasoning, long-horizon agentic coding, vision, and memory-intensive tasks. Available via API, Bedrock, Vertex AI, and Microsoft Foundry.</div>
-        <div class="ref-meta"><span class="badge badge-new">Latest</span><span class="badge badge-official">Official</span></div>
+        <div class="ref-title">Claude Fable 5</div>
+        <div class="ref-desc">Anthropic's most capable widely released model — built for the most demanding reasoning and long-horizon agentic work. Thinking is always on; 1M-token context, up to 128K output. Model ID: <code>claude-fable-5</code>.</div>
+        <div class="ref-meta"><span class="badge badge-new">Flagship</span><span class="badge badge-official">Official</span></div>
+      </div>
+      <button class="open-btn" data-url="https://www.anthropic.com/claude"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
+    </div>
+
+    <div class="ref-item">
+      <div>
+        <div class="ref-title">Claude Opus 4.8</div>
+        <div class="ref-desc">Most capable Opus-tier model — highly autonomous, state-of-the-art on long-horizon agentic coding, knowledge work, and memory. 1M-token context at standard pricing. Fast mode available. Model ID: <code>claude-opus-4-8</code>.</div>
+        <div class="ref-meta"><span class="badge badge-new">Latest Opus</span><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude/opus"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
     </div>
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Claude Sonnet 4.6</div>
-        <div class="ref-desc">Frontier intelligence at scale — ideal balance of intelligence and speed for most production workloads, agents, and enterprise coding. Model ID: <code>claude-sonnet-4-6</code>.</div>
+        <div class="ref-title">Claude Sonnet 5</div>
+        <div class="ref-desc">The best balance of speed and intelligence — near-Opus quality on coding and agentic work at Sonnet cost. Adaptive thinking on by default; 1M-token context. Model ID: <code>claude-sonnet-5</code>.</div>
         <div class="ref-meta"><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude/sonnet"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -900,7 +909,7 @@ body::after {
     <div class="ref-item">
       <div>
         <div class="ref-title">Claude Haiku 4.5</div>
-        <div class="ref-desc">Fastest model with near-frontier intelligence. Ideal for high-throughput classification, routing, simple extraction, and sub-agent roles. Model ID: <code>claude-haiku-4-5-20251001</code>.</div>
+        <div class="ref-desc">Fastest model with near-frontier intelligence. Ideal for high-throughput classification, routing, simple extraction, and sub-agent roles. Model ID: <code>claude-haiku-4-5</code>.</div>
         <div class="ref-meta"><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude/haiku"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -989,7 +998,7 @@ body::after {
     <div class="ref-item">
       <div>
         <div class="ref-title">Models overview</div>
-        <div class="ref-desc">Compare Opus 4.7, Sonnet 4.6, Haiku 4.5 — pricing, context windows, knowledge cutoffs, and which cloud platforms support each model.</div>
+        <div class="ref-desc">Compare Fable 5, Opus 4.8, Sonnet 5, and Haiku 4.5 — pricing, context windows, knowledge cutoffs, and which cloud platforms support each model.</div>
         <div class="ref-meta"><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://docs.claude.com/en/docs/about-claude/models/overview"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -1015,8 +1024,8 @@ body::after {
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Prompting best practices (Claude 4.x)</div>
-        <div class="ref-desc">The single living reference for prompt engineering with Opus 4.7, Opus 4.6, Sonnet 4.6, and Haiku 4.5. Covers foundational techniques, extended thinking, tool use, and agentic systems.</div>
+        <div class="ref-title">Prompting best practices (Claude 5 &amp; 4.x)</div>
+        <div class="ref-desc">The single living reference for prompt engineering with Fable 5, Opus 4.8, Sonnet 5, and Haiku 4.5. Covers foundational techniques, adaptive thinking, effort control, tool use, and agentic systems.</div>
         <div class="ref-meta"><span class="badge badge-new">Updated</span><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-prompting-best-practices"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -1443,8 +1452,8 @@ body::after {
   <div id="interviewQA">
 
     <div class="qa-item" data-cat="api">
-      <div class="qa-q">1. What's the difference between Opus, Sonnet, and Haiku — and how do you choose? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
-      <div class="qa-a"><div class="qa-a-inner"><strong>Opus</strong> is the most capable — pick it for complex reasoning, long-horizon agentic work, and deep coding tasks. <strong>Sonnet</strong> balances intelligence and cost — the default for most production workloads and agents. <strong>Haiku</strong> is fastest and cheapest — ideal for classification, routing, and sub-agent roles. Strategy: start with Sonnet, escalate to Opus where evals show quality gaps, downgrade to Haiku where latency or cost dominates.</div></div>
+      <div class="qa-q">1. How do you choose between Fable, Opus, Sonnet, and Haiku? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner"><strong>Fable 5</strong> is the most capable model — reach for it on the hardest reasoning and long-horizon agentic work. <strong>Opus 4.8</strong> is the most capable Opus tier — highly autonomous coding, knowledge work, and memory. <strong>Sonnet 5</strong> balances intelligence and cost — near-Opus quality at Sonnet price, the default for most production workloads and agents. <strong>Haiku 4.5</strong> is fastest and cheapest — ideal for classification, routing, and sub-agent roles. Strategy: start with Sonnet 5, escalate to Opus 4.8 or Fable 5 where evals show quality gaps, downgrade to Haiku where latency or cost dominates.</div></div>
     </div>
 
     <div class="qa-item" data-cat="api">

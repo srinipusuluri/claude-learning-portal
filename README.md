@@ -14,8 +14,9 @@ A comprehensive, beautifully designed portal for Claude AI products, documentati
 
 ### 1. Products
 Explore all Claude models and product surfaces:
-- Claude Opus 4.7 (Most capable)
-- Claude Sonnet 4.6 (Balanced intelligence & speed)
+- Claude Fable 5 (Most capable — flagship)
+- Claude Opus 4.8 (Most capable Opus tier)
+- Claude Sonnet 5 (Balanced intelligence & speed)
 - Claude Haiku 4.5 (Fastest model)
 - Claude.ai web/mobile/desktop app
 - Claude API & platform
