@@ -2355,6 +2355,7 @@ show(0);
     <div class="jb-row" style="margin-bottom:0">
       <a class="jb-ext" id="jbLi" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a>
       <a class="jb-ext" id="jbIn" target="_blank" rel="noopener"><i class="ti ti-search" aria-hidden="true"></i> Indeed</a>
+      <a class="jb-ext" id="jbAl" target="_blank" rel="noopener"><i class="ti ti-sparkles" aria-hidden="true"></i> Alion AI</a>
       <a class="jb-ext" id="jbGo" target="_blank" rel="noopener"><i class="ti ti-brand-google" aria-hidden="true"></i> Google Jobs</a>
       <a class="jb-ext" href="https://www.anthropic.com/careers" target="_blank" rel="noopener"><i class="ti ti-building" aria-hidden="true"></i> Anthropic Careers</a>
     </div>
@@ -2389,6 +2390,7 @@ $('jbRoles').innerHTML=ROLES.map(r=>'<div class="jb-role" style="--c:'+r[1]+'"><
 function upd(){const k=encodeURIComponent($('jbKw').value.trim()||'Claude'),l=encodeURIComponent($('jbLoc').value.trim());
  $('jbLi').href='https://www.linkedin.com/jobs/search/?keywords='+k+(l?'&location='+l:'');
  $('jbIn').href='https://www.indeed.com/jobs?q='+k+(l?'&l='+l:'');
+ $('jbAl').href='https://alion.io/jobs?search='+k+'&location_ids=1';
  $('jbGo').href='https://www.google.com/search?ibp=htl;jobs&q='+k+(l?'%20'+l:'')+'%20jobs';}
 $('jbKw').oninput=$('jbLoc').oninput=upd;upd();
 // live data
