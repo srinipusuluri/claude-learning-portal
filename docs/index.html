@@ -893,12 +893,177 @@ body::after {
   <button class="tab-btn" data-panel="videos"><i class="ti ti-player-play" aria-hidden="true"></i> Videos</button>
   <button class="tab-btn" data-panel="interview"><i class="ti ti-message-question" aria-hidden="true"></i> Interview Q&A</button>
   <button class="tab-btn" data-panel="certqa"><i class="ti ti-clipboard-check" aria-hidden="true"></i> Cert Practice</button>
-  <button class="tab-btn" data-panel="udemy"><i class="ti ti-brand-udemy" aria-hidden="true"></i> Udemy Courses</button>
+  <button class="tab-btn" data-panel="udemy"><i class="ti ti-device-laptop" aria-hidden="true"></i> Udemy Courses</button>
   <button class="tab-btn" data-panel="community"><i class="ti ti-users" aria-hidden="true"></i> Community</button>
 </div>
 
 <!-- PRODUCTS -->
 <div class="panel active" id="panel-products">
+<!-- ARCHITECTURE HERO -->
+<style>
+.arch{background:linear-gradient(135deg,#0f0c29 0%,#1e1b4b 45%,#312e81 100%);border-radius:20px;padding:28px;margin-bottom:28px;color:#e0e7ff;position:relative;overflow:hidden;box-shadow:0 20px 50px -15px rgba(79,70,229,.5)}
+.arch::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,rgba(236,72,153,.25),transparent 45%),radial-gradient(circle at 90% 100%,rgba(6,182,212,.22),transparent 45%);pointer-events:none}
+.arch>*{position:relative}
+.arch h3{margin:0 0 4px;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+.arch .arch-sub{margin:0 0 22px;color:#a5b4fc;font-size:.95rem}
+.arch-h{display:flex;align-items:center;gap:8px;margin:26px 0 12px;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#c7d2fe}
+.arch-h::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(165,180,252,.4),transparent)}
+.arch-layer{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:center;padding:12px 14px;margin-bottom:8px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-left:4px solid var(--c)}
+.arch-lname{font-weight:700;color:#fff;font-size:.9rem;line-height:1.25}
+.arch-lname small{display:block;font-weight:500;color:#a5b4fc;font-size:.72rem;margin-top:2px}
+.arch-chips{display:flex;flex-wrap:wrap;gap:8px}
+.arch-chip{font:inherit;font-size:.8rem;font-weight:600;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;cursor:pointer;transition:all .2s}
+.arch-chip:hover,.arch-chip:focus-visible{background:var(--c);border-color:var(--c);transform:translateY(-2px);box-shadow:0 6px 16px -4px var(--c);outline:none}
+.arch-chip.on{background:var(--c);border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.35)}
+.arch-flow{text-align:center;color:#818cf8;font-size:.7rem;letter-spacing:.2em;margin:-2px 0 4px}
+.arch-detail{margin-top:12px;padding:16px 18px;border-radius:14px;background:rgba(0,0,0,.28);border:1px dashed rgba(255,255,255,.2);min-height:84px}
+.arch-detail b{color:#fff;font-size:1rem}
+.arch-detail p{margin:6px 0 0;color:#c7d2fe;font-size:.9rem;line-height:1.55}
+.arch-detail code{background:rgba(255,255,255,.12);padding:1px 6px;border-radius:5px;color:#fde68a;font-size:.82rem}
+.arch-loop{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:22px;align-items:center}
+.arch-svg{width:100%;height:auto;overflow:visible}
+.arch-node circle{fill:#1e1b4b;stroke:#6366f1;stroke-width:2;transition:all .3s}
+.arch-node text{fill:#c7d2fe;font-size:11px;font-weight:700;text-anchor:middle;pointer-events:none}
+.arch-node .ico{font-size:16px}
+.arch-node{cursor:pointer}
+.arch-node.on circle{fill:#ec4899;stroke:#fff;stroke-width:3;filter:drop-shadow(0 0 10px #ec4899)}
+.arch-node.on text{fill:#fff}
+.arch-node.done circle{stroke:#10b981}
+.arch-ring{fill:none;stroke:rgba(165,180,252,.35);stroke-width:2;stroke-dasharray:6 8;animation:archdash 30s linear infinite}
+@keyframes archdash{to{stroke-dashoffset:-280}}
+.arch-ctr{fill:#a5b4fc;font-size:11px;text-anchor:middle;letter-spacing:.1em}
+.arch-step{padding:16px 18px;border-radius:14px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.12)}
+.arch-step .n{font-size:.72rem;font-weight:700;letter-spacing:.12em;color:#f9a8d4}
+.arch-step h4{margin:4px 0 6px;color:#fff;font-size:1.1rem}
+.arch-step p{margin:0 0 10px;color:#c7d2fe;font-size:.9rem;line-height:1.55}
+.arch-step pre{margin:0;padding:10px 12px;border-radius:10px;background:#0b0920;color:#a7f3d0;font-size:.76rem;line-height:1.5;overflow-x:auto;white-space:pre-wrap}
+.arch-ctl{display:flex;gap:8px;margin-top:12px}
+.arch-btn{font:inherit;font-size:.82rem;font-weight:700;color:#fff;background:linear-gradient(135deg,#6366f1,#ec4899);border:0;padding:8px 16px;border-radius:10px;cursor:pointer}
+.arch-btn.alt{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.arch-btn:hover{filter:brightness(1.15)}
+.arch-mem{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.arch-m{padding:14px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.arch-m i{font-size:1.4rem;color:var(--c)}
+.arch-m b{display:block;color:#fff;margin:6px 0 2px;font-size:.92rem}
+.arch-m span{font-size:.8rem;color:#c7d2fe;line-height:1.45}
+.arch-m em{display:inline-block;margin-top:8px;font-size:.68rem;font-style:normal;font-weight:700;padding:2px 8px;border-radius:999px;background:rgba(255,255,255,.12);color:#fde68a}
+@media(max-width:760px){.arch{padding:18px}.arch-layer{grid-template-columns:1fr}.arch-loop{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.arch-ring{animation:none}.arch-chip{transition:none}}
+</style>
+<section class="arch" aria-labelledby="archTitle">
+  <h3 id="archTitle"><i class="ti ti-topology-star-3" aria-hidden="true"></i> Claude Agentic Architecture</h3>
+  <p class="arch-sub">From user request to finished work: the layers, the reasoning loop, tool calling, and memory. Click anything to explore.</p>
+
+  <div class="arch-h">1 · The stack (click a component)</div>
+  <div id="archStack"></div>
+  <div class="arch-detail" id="archDetail" aria-live="polite"><b>Pick a component above</b><p>Each chip explains what it does and when the exams expect you to use it.</p></div>
+
+  <div class="arch-h">2 · The agent loop: reason → act → observe → remember</div>
+  <div class="arch-loop">
+    <svg class="arch-svg" id="archSvg" viewBox="0 0 400 400" role="img" aria-label="Agent loop diagram with eight steps"></svg>
+    <div>
+      <div class="arch-step" id="archStep" aria-live="polite"></div>
+      <div class="arch-ctl">
+        <button class="arch-btn" id="archPlay"><i class="ti ti-player-play" aria-hidden="true"></i> Play</button>
+        <button class="arch-btn alt" id="archPrev">Back</button>
+        <button class="arch-btn alt" id="archNext">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="arch-h">3 · Memory: what Claude can "remember"</div>
+  <div class="arch-mem">
+    <div class="arch-m" style="--c:#06b6d4"><i class="ti ti-clock-bolt" aria-hidden="true"></i><b>Context window</b><span>Working memory for one session: system prompt, history, tool results. Up to 1M tokens on current models.</span><em>Short-term</em></div>
+    <div class="arch-m" style="--c:#f59e0b"><i class="ti ti-bolt" aria-hidden="true"></i><b>Prompt caching</b><span>Reuse a stable prefix (system, tools, docs) at lower cost and latency. Any prefix change busts it.</span><em>Cost / speed</em></div>
+    <div class="arch-m" style="--c:#10b981"><i class="ti ti-file-text" aria-hidden="true"></i><b>CLAUDE.md &amp; files</b><span>Project instructions and notes loaded at session start; progress files let a fresh context resume work.</span><em>Persistent</em></div>
+    <div class="arch-m" style="--c:#ec4899"><i class="ti ti-database" aria-hidden="true"></i><b>Memory tool</b><span>Claude reads and writes files in a <code>/memories</code> directory you host, so knowledge survives across sessions.</span><em>Long-term</em></div>
+    <div class="arch-m" style="--c:#8b5cf6"><i class="ti ti-scissors" aria-hidden="true"></i><b>Compaction &amp; trimming</b><span>Summarize or clear old turns and stale tool results to keep long-running agents within budget.</span><em>Context mgmt</em></div>
+    <div class="arch-m" style="--c:#f97316"><i class="ti ti-search" aria-hidden="true"></i><b>Retrieval (RAG)</b><span>Fetch only the relevant chunks from your data at query time instead of loading everything.</span><em>External</em></div>
+  </div>
+</section>
+<script>
+(function(){
+const L=[
+{n:'Surfaces',s:'where users meet Claude',c:'#ec4899',i:[
+ ['claude.ai &amp; apps','Chat interface for web, desktop and mobile, with Projects, Artifacts and connectors. Best for people, not pipelines.'],
+ ['Claude Code','Agentic coding in terminal, IDE and web. Reads your repo, edits files, runs commands, uses MCP, subagents, hooks and Skills.'],
+ ['Claude API','Direct programmatic access through the Messages API. You own the loop, tools, prompts and state.'],
+ ['Cloud platforms','Claude through Amazon Bedrock, Google Vertex AI and Microsoft Foundry, for teams that need their cloud\'s billing, IAM and data residency.'],
+ ['Chrome &amp; Slack','Claude acting inside a browser or a workspace, with access limited to what the user grants.']]},
+{n:'Agent layer',s:'orchestration',c:'#8b5cf6',i:[
+ ['Agent loop','Call the model, run any requested tools, return results, repeat until <code>stop_reason</code> is <code>end_turn</code>. Add turn, time and budget caps.'],
+ ['Agent SDK','The same harness that powers Claude Code as a library: built-in tools, permissions, sessions, subagents and hooks.'],
+ ['Subagents','Isolated workers with their own context and tool set. Good for parallel research or keeping noisy work out of the main context.'],
+ ['Skills','Folders of instructions and scripts loaded on demand, so specialist know-how costs context only when it is used.'],
+ ['Hooks','Deterministic code that runs on events such as before or after a tool call. Use them for rules that must always hold, instead of hoping the prompt is followed.'],
+ ['Plan mode','Claude proposes a plan and waits for approval before changing anything.']]},
+{n:'Reasoning',s:'how Claude thinks',c:'#6366f1',i:[
+ ['Extended thinking','The model works through a problem in thinking blocks before answering. Raises quality on hard, multi-step tasks.'],
+ ['Interleaved thinking','Reasoning between tool calls, so the model can reassess after each result.'],
+ ['Effort &amp; budget','Trade depth for speed and cost. Use less on simple lookups and more on planning and debugging.'],
+ ['Prompting','Clear role and goal, examples, XML-tagged sections, and explicit output format. Stable instructions go in <code>system</code>.'],
+ ['Structured output','Constrain responses to a JSON schema so downstream code can rely on the shape.']]},
+{n:'Tools &amp; integration',s:'acting on the world',c:'#06b6d4',i:[
+ ['Tool use','You define tools with a name, description and JSON schema. Claude returns a <code>tool_use</code> block; your code runs it and sends back a <code>tool_result</code>. Good descriptions drive good tool choice.'],
+ ['Server tools','Tools Anthropic runs for you, such as web search, web fetch and code execution. No client loop needed for them.'],
+ ['MCP','Open standard for exposing tools, resources and prompts from a server. Register once, and any MCP client can use it. Scope it at user, project or local level.'],
+ ['Computer use','Claude views screenshots and issues mouse and keyboard actions. Run it in a sandbox and keep a human in the loop for risky actions.'],
+ ['tool_choice','Force a specific tool, require any tool, or let Claude decide. Forcing is useful for extraction.'],
+ ['Parallel calls','Independent tool calls can be issued together in one turn to cut latency.']]},
+{n:'Models',s:'the engine',c:'#10b981',i:[
+ ['Fable 5.2','Flagship for the most demanding reasoning and long-horizon agentic work. Thinking always on.'],
+ ['Opus 5.5','Highly capable and autonomous. Strong on long-running agentic coding and knowledge work.'],
+ ['Sonnet 5.5','The balanced default: strong quality at moderate cost and latency for most production workloads.'],
+ ['Haiku 5.5','Fastest and cheapest. Ideal for classification, routing, and high-volume subagent work.']]},
+{n:'Safety &amp; control',s:'keeping it reliable',c:'#f59e0b',i:[
+ ['Permissions','Allow, ask or deny rules per tool. Start restrictive and widen deliberately.'],
+ ['Human in the loop','Approval gates before irreversible actions such as deletes, payments and sends.'],
+ ['Guardrails','Input and output checks, least-privilege credentials, and sandboxing for code and browser tools.'],
+ ['Evals &amp; observability','Test sets, logged traces and token and cache usage per request, so you can measure changes instead of guessing.'],
+ ['Error handling','Retry 429 and 5xx with backoff and jitter. Return structured tool errors so the model can recover.']]}
+];
+const stack=document.getElementById('archStack'),det=document.getElementById('archDetail');
+L.forEach((l,li)=>{
+ const row=document.createElement('div');row.className='arch-layer';row.style.setProperty('--c',l.c);
+ row.innerHTML='<div class="arch-lname">'+l.n+'<small>'+l.s+'</small></div><div class="arch-chips"></div>';
+ const box=row.querySelector('.arch-chips');
+ l.i.forEach(it=>{const b=document.createElement('button');b.className='arch-chip';b.type='button';b.innerHTML=it[0];
+  b.onclick=()=>{stack.querySelectorAll('.arch-chip.on').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+   det.style.borderColor=l.c;det.innerHTML='<b>'+it[0]+'</b> <span style="color:#a5b4fc;font-size:.78rem">· '+l.n+'</span><p>'+it[1]+'</p>';};
+  box.appendChild(b);});
+ stack.appendChild(row);
+ if(li<L.length-1){const f=document.createElement('div');f.className='arch-flow';f.textContent='▼ ▲';stack.appendChild(f);}
+});
+const S=[
+['Perceive','Load the goal and context','The request arrives with the system prompt, tool definitions, project memory (<code>CLAUDE.md</code>, memory files) and any retrieved documents.','messages: [{role:"user", content:"Fix the failing checkout test"}]\ntools: [read_file, run_tests, edit_file]'],
+['Reason','Think and plan','Claude reasons about the goal, breaks it into steps and picks the next action. Extended thinking improves this on hard problems.','thinking: "Need the failing output first, so run tests, then read the file it names."'],
+['Decide','Choose a tool','If an action is needed, the response stops with <code>stop_reason: "tool_use"</code> and contains a structured tool call. Independent calls may be issued in parallel.','{type:"tool_use", id:"tu_1",\n name:"run_tests", input:{path:"checkout"}}'],
+['Act','Your code runs the tool','Your harness (or an MCP server, or a server tool) executes the call. Permissions and hooks gate it here, which is where deterministic safety rules belong.','PreToolUse hook → permission check → execute run_tests'],
+['Observe','Return the result','The output goes back as a <code>tool_result</code> tied to the call id. Errors are returned as results too, so Claude can adapt.','{type:"tool_result", tool_use_id:"tu_1",\n content:"1 failed: total != 42"}'],
+['Remember','Update memory and context','Keep what matters: write notes to a memory file, cache the stable prefix, and compact or clear stale tool output so the context stays lean.','write /memories/progress.md\n"checkout bug: tax rounding in cart.py"'],
+['Verify','Check against the goal','Claude judges whether the goal is met, for example by re-running tests. If not, the loop returns to Reason with new information.','run_tests → all passed ✓   (else: back to Reason)'],
+['Respond','Finish with an answer','With no further tool calls the turn ends with <code>stop_reason: "end_turn"</code> and the final answer. Turn and budget caps stop runaway loops.','stop_reason: "end_turn"\n"Fixed rounding in cart.py; tests pass."']
+];
+const svg=document.getElementById('archSvg'),NS='http://www.w3.org/2000/svg',cx=200,cy=200,R=140;
+const icons=['👁','🧠','🎯','⚙️','📥','💾','✅','💬'];
+let h='<circle class="arch-ring" cx="200" cy="200" r="140"/><text class="arch-ctr" x="200" y="196">AGENT</text><text class="arch-ctr" x="200" y="212">LOOP</text>';
+S.forEach((s,i)=>{const a=-Math.PI/2+i*2*Math.PI/8,x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);
+ h+='<g class="arch-node" data-i="'+i+'" tabindex="0" role="button" aria-label="'+s[0]+'"><circle cx="'+x+'" cy="'+y+'" r="34"/><text class="ico" x="'+x+'" y="'+(y+2)+'">'+icons[i]+'</text><text x="'+x+'" y="'+(y+19)+'" style="font-size:8.5px">'+s[0]+'</text></g>';});
+svg.innerHTML=h;
+const stepEl=document.getElementById('archStep'),nodes=[...svg.querySelectorAll('.arch-node')],play=document.getElementById('archPlay');
+let cur=0,timer=null;
+function show(i){cur=(i+S.length)%S.length;const s=S[cur];
+ nodes.forEach((n,k)=>{n.classList.toggle('on',k===cur);n.classList.toggle('done',k<cur);});
+ stepEl.innerHTML='<div class="n">STEP '+(cur+1)+' OF '+S.length+'</div><h4>'+s[0]+': '+s[1]+'</h4><p>'+s[2]+'</p><pre>'+s[3].replace(/</g,'&lt;')+'</pre>';}
+function stop(){clearInterval(timer);timer=null;play.innerHTML='<i class="ti ti-player-play"></i> Play';}
+play.onclick=()=>{if(timer){stop();return;}play.innerHTML='<i class="ti ti-player-pause"></i> Pause';timer=setInterval(()=>show(cur+1),3200);};
+document.getElementById('archNext').onclick=()=>{stop();show(cur+1);};
+document.getElementById('archPrev').onclick=()=>{stop();show(cur-1);};
+nodes.forEach(n=>{const go=()=>{stop();show(+n.dataset.i);};n.onclick=go;n.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}};});
+show(0);
+})();
+</script>
+
   <p class="section-label">Claude models & product surfaces</p>
   <div class="ref-list">
 
