@@ -2337,8 +2337,8 @@ show(0);
 .jb-more{display:block;margin:14px auto 0}
 </style>
 <div class="panel" id="panel-jobs">
-  <p class="section-label">Live Anthropic openings, role guide, salary data and a job-search tool</p>
-  <div class="jb-note"><i class="ti ti-info-circle" aria-hidden="true"></i> Openings and pay ranges load live from Anthropic's public careers board. Salaries are the posted <b>base</b> ranges in USD and exclude equity and bonus. Always confirm on the posting.</div>
+  <p class="section-label">Role guide, salary data and a job-search tool</p>
+  <div class="jb-note"><i class="ti ti-info-circle" aria-hidden="true"></i> Pay ranges load live from Anthropic's public careers board. Salaries are the posted <b>base</b> ranges in USD and exclude equity and bonus. Always confirm on the posting.</div>
 
   <div class="jb-stats" id="jbStats"><div class="jb-stat"><b>…</b><span>Loading live data</span></div></div>
 
@@ -2360,17 +2360,11 @@ show(0);
     </div>
   </div>
 
-  <div class="jb-h">Open roles at Anthropic (live)</div>
-  <div class="jb-row">
-    <input class="jb-in" id="jbQ" placeholder="Filter by title, e.g. engineer, solutions" aria-label="Filter openings">
-    <select class="jb-in" id="jbDep" aria-label="Department"><option value="">All teams</option></select>
-    <select class="jb-in" id="jbLc" aria-label="Location"><option value="">All locations</option></select>
-    <select class="jb-in" id="jbSort" aria-label="Sort"><option value="new">Newest</option><option value="hi">Highest pay</option></select>
-    <label style="font-size:13px"><input type="checkbox" id="jbSalOnly"> Pay posted</label>
+  <div class="jb-h">Current openings</div>
+  <div class="jb-tool" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+    <span style="font-size:14px;color:var(--color-text-primary)">Openings change daily, so browse the live list on the official careers page.</span>
+    <a class="jb-ext" href="https://www.anthropic.com/careers/jobs" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> View all open roles</a>
   </div>
-  <div class="jb-meta" id="jbCount" style="margin-bottom:6px"></div>
-  <div id="jbList"></div>
-  <button class="jb-chip jb-more" id="jbMore" hidden>Show more</button>
 
   <div class="jb-h">Salary by team (posted USD base, live)</div>
   <div style="overflow-x:auto"><table class="jb-tbl"><thead><tr><th>Team</th><th>Roles</th><th>Median low</th><th>Median high</th><th style="width:25%">Typical top of range</th></tr></thead><tbody id="jbSal"></tbody></table></div>
@@ -2399,7 +2393,7 @@ function upd(){const k=encodeURIComponent($('jbKw').value.trim()||'Claude'),l=en
 $('jbKw').oninput=$('jbLoc').oninput=upd;upd();
 // live data
 const rx=/([$£€])\s?([\d,]{5,})\s*(?:[A-Z]{3})?\s*(?:[-–—]|to)\s*(?:[$£€])?\s?([\d,]{5,})/;
-let jobs=[],shown=30,loaded=false;
+let jobs=[],loaded=false;
 const fmt=n=>'$'+Math.round(n/1000)+'k';
 const med=a=>{a=[...a].sort((x,y)=>x-y);return a.length?a[Math.floor(a.length/2)]:0;};
 function parse(j){const tmp=document.createElement('div');tmp.innerHTML=j.content||'';tmp.innerHTML=tmp.textContent;
@@ -2407,13 +2401,6 @@ function parse(j){const tmp=document.createElement('div');tmp.innerHTML=j.conten
  const o={t:j.title,u:j.absolute_url,d:(j.departments&&j.departments[0]&&j.departments[0].name)||'Other',l:(j.location&&j.location.name)||'',f:j.first_published||j.updated_at||'',lo:0,hi:0,cur:''};
  if(m){o.cur=m[1];o.lo=+m[2].replace(/,/g,'');o.hi=+m[3].replace(/,/g,'');}
  return o;}
-function render(){
- const q=$('jbQ').value.trim().toLowerCase(),dep=$('jbDep').value,lc=$('jbLc').value,so=$('jbSalOnly').checked;
- let a=jobs.filter(j=>(!q||j.t.toLowerCase().includes(q))&&(!dep||j.d===dep)&&(!lc||j.l.includes(lc))&&(!so||j.hi));
- a.sort($('jbSort').value==='hi'?(x,y)=>(y.cur==='$'?y.hi:0)-(x.cur==='$'?x.hi:0):(x,y)=>String(y.f).localeCompare(String(x.f)));
- $('jbCount').textContent=a.length+' matching roles';
- $('jbList').innerHTML=a.slice(0,shown).map(j=>'<div class="jb-job"><div><b>'+esc(j.t)+'</b><div class="jb-meta">'+esc(j.d)+' · '+esc(j.l)+'</div>'+(j.hi?'<span class="jb-sal">'+j.cur+Math.round(j.lo/1000)+'k – '+j.cur+Math.round(j.hi/1000)+'k base</span>':'')+'</div><a class="open-btn" href="'+esc(j.u)+'" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Apply</a></div>').join('')||'<div class="jb-meta" style="padding:14px">No roles match. Try clearing a filter.</div>';
- $('jbMore').hidden=a.length<=shown;}
 async function load(){
  if(loaded)return;loaded=true;
  try{
@@ -2422,17 +2409,12 @@ async function load(){
   jobs=(await r.json()).jobs.map(parse);
  }catch(e){loaded=false;$('jbStats').innerHTML='<div class="jb-stat"><b>Unavailable</b><span>Live data could not load. Use <a href="https://www.anthropic.com/careers" target="_blank" rel="noopener">Anthropic Careers</a>.</span></div>';return;}
  const usd=jobs.filter(j=>j.cur==='$');
- $('jbStats').innerHTML=[[jobs.length,'open roles'],[new Set(jobs.map(j=>j.d)).size,'teams hiring'],[Math.round(100*jobs.filter(j=>j.hi).length/jobs.length)+'%','list a pay range'],[fmt(med(usd.map(j=>j.lo)))+' – '+fmt(med(usd.map(j=>j.hi))),'median base (USD)']].map(s=>'<div class="jb-stat"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>').join('');
+ $('jbStats').innerHTML=[[new Set(jobs.map(j=>j.d)).size,'teams hiring'],[Math.round(100*jobs.filter(j=>j.hi).length/jobs.length)+'%','list a pay range'],[fmt(med(usd.map(j=>j.lo)))+' – '+fmt(med(usd.map(j=>j.hi))),'median base (USD)']].map(s=>'<div class="jb-stat"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>').join('');
  const deps=[...new Set(jobs.map(j=>j.d))].sort();
- $('jbDep').innerHTML='<option value="">All teams</option>'+deps.map(d=>'<option>'+esc(d)+'</option>').join('');
- const cities=new Set();jobs.forEach(j=>j.l.split(/[;|]/).forEach(c=>{c=c.trim();if(c)cities.add(c);}));
- $('jbLc').innerHTML='<option value="">All locations</option>'+[...cities].sort().map(c=>'<option>'+esc(c)+'</option>').join('');
  const rows=deps.map(d=>{const u=usd.filter(j=>j.d===d);return u.length>=3?{d,n:u.length,lo:med(u.map(j=>j.lo)),hi:med(u.map(j=>j.hi))}:null;}).filter(Boolean).sort((a,b)=>b.hi-a.hi);
  const mx=Math.max(...rows.map(r=>r.hi),1);
  $('jbSal').innerHTML=rows.map(r=>'<tr><td>'+esc(r.d)+'</td><td>'+r.n+'</td><td>'+fmt(r.lo)+'</td><td>'+fmt(r.hi)+'</td><td><div class="jb-bar" style="width:'+Math.round(100*r.hi/mx)+'%"></div></td></tr>').join('');
- render();}
-['jbQ','jbDep','jbLc','jbSort','jbSalOnly'].forEach(i=>$(i).addEventListener('input',()=>{shown=30;render();}));
-$('jbMore').onclick=()=>{shown+=30;render();};
+}
 document.querySelector('[data-panel="jobs"]').addEventListener('click',load);
 })();
 </script>
