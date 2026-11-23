@@ -153,6 +153,14 @@ body {
 }
 
 .avatar{display:block;width:96px;height:96px;margin:0 auto 14px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 3px var(--primary-400),0 10px 25px -8px rgba(79,70,229,.55)}
+.what{margin-bottom:18px;padding:22px 24px;border-radius:20px;background:#fff;border:1px solid var(--primary-200);box-shadow:var(--shadow-sm)}
+.what-lead{margin:0 0 14px;font-size:1.12rem;line-height:1.55;color:var(--color-text-primary);font-weight:600}
+.what-lead mark{background:linear-gradient(135deg,var(--primary-500),var(--accent-pink));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.what-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.what-c{padding:14px 16px;border-radius:14px;background:var(--primary-50);border-left:4px solid var(--c)}
+.what-c b{display:block;color:var(--color-text-primary);margin-bottom:4px;font-size:.95rem}
+.what-c span{font-size:.86rem;line-height:1.5;color:var(--color-text-tertiary)}
+.what-c i{color:var(--c)}
 .ebook-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:9px 18px;border-radius:99px;background:linear-gradient(135deg,var(--primary-500),var(--accent-pink));color:#fff;font-weight:600;font-size:14px;text-decoration:none;box-shadow:var(--shadow-sm);transition:transform .2s}
 .ebook-link:hover{transform:translateY(-2px)}
 
@@ -901,6 +909,17 @@ body::after {
 
 <!-- PRODUCTS -->
 <div class="panel active" id="panel-products">
+<!-- WHAT IS CLAUDE -->
+<section class="what" aria-labelledby="whatTitle">
+  <p class="what-lead" id="whatTitle"><mark>Claude</mark> is Anthropic's family of AI models, built to be helpful, honest and safe. It doesn't just answer: given tools and memory, it <mark>reasons, acts and checks its own work</mark>.</p>
+  <div class="what-grid">
+    <div class="what-c" style="--c:#6366f1"><b><i class="ti ti-text-recognition" aria-hidden="true"></i> 1 · Reads</b><span>Turns your text, images and files into tokens and predicts the best response, using what it learned in training and was refined with human feedback.</span></div>
+    <div class="what-c" style="--c:#ec4899"><b><i class="ti ti-brain" aria-hidden="true"></i> 2 · Reasons</b><span>Thinks step by step before answering, so hard multi-step problems get a plan instead of a guess.</span></div>
+    <div class="what-c" style="--c:#06b6d4"><b><i class="ti ti-tool" aria-hidden="true"></i> 3 · Acts</b><span>Calls tools, such as code, search, files and MCP servers, then reads the results and decides the next move.</span></div>
+    <div class="what-c" style="--c:#10b981"><b><i class="ti ti-database" aria-hidden="true"></i> 4 · Remembers</b><span>Keeps context in its window and notes in memory files, so long tasks continue where they left off.</span></div>
+  </div>
+</section>
+
 <!-- ARCHITECTURE HERO -->
 <style>
 .arch{background:linear-gradient(135deg,#0f0c29 0%,#1e1b4b 45%,#312e81 100%);border-radius:20px;padding:28px;margin-bottom:28px;color:#e0e7ff;position:relative;overflow:hidden;box-shadow:0 20px 50px -15px rgba(79,70,229,.5)}
