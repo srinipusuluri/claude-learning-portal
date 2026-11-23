@@ -904,6 +904,7 @@ body::after {
   <button class="tab-btn" data-panel="interview"><i class="ti ti-message-question" aria-hidden="true"></i> Interview Q&A</button>
   <button class="tab-btn" data-panel="certqa"><i class="ti ti-clipboard-check" aria-hidden="true"></i> Cert Practice</button>
   <button class="tab-btn" data-panel="udemy"><i class="ti ti-device-laptop" aria-hidden="true"></i> Udemy Courses</button>
+  <button class="tab-btn" data-panel="jobs"><i class="ti ti-briefcase" aria-hidden="true"></i> Claude Jobs</button>
   <button class="tab-btn" data-panel="community"><i class="ti ti-users" aria-hidden="true"></i> Community</button>
 </div>
 
@@ -2300,6 +2301,140 @@ show(0);
   </div>
 
 </div>
+
+<!-- JOBS -->
+<style>
+.jb-note{margin:0 0 16px;padding:10px 14px;border-radius:12px;background:var(--accent-yellow-light);color:#92400e;font-size:13px;line-height:1.5}
+.jb-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+.jb-stat{padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,var(--primary-50),#fff);border:1px solid var(--primary-200)}
+.jb-stat b{display:block;font-size:1.5rem;color:var(--primary-700)}
+.jb-stat span{font-size:12px;color:var(--color-text-tertiary)}
+.jb-h{margin:26px 0 10px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary-700)}
+.jb-roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.jb-role{padding:14px 16px;border-radius:14px;background:#fff;border:1px solid var(--primary-200);border-top:4px solid var(--c)}
+.jb-role b{display:block;color:var(--color-text-primary);font-size:14px}
+.jb-role p{margin:4px 0 8px;font-size:12.5px;line-height:1.5;color:var(--color-text-tertiary)}
+.jb-tags{display:flex;flex-wrap:wrap;gap:5px}
+.jb-tags span{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--primary-50);color:var(--primary-700)}
+.jb-tool{padding:16px;border-radius:16px;background:linear-gradient(135deg,var(--primary-50),var(--accent-pink-light));border:1px solid var(--primary-200)}
+.jb-in{font:inherit;font-size:14px;padding:9px 14px;border-radius:10px;border:1px solid var(--primary-300);background:#fff;min-width:0}
+.jb-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+.jb-row .jb-in{flex:1 1 200px}
+.jb-chip{font:inherit;font-size:12px;font-weight:600;padding:5px 11px;border-radius:99px;border:1px solid var(--primary-300);background:#fff;color:var(--primary-700);cursor:pointer}
+.jb-chip:hover{background:var(--primary-500);color:#fff}
+.jb-ext{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;padding:8px 14px;border-radius:10px;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--primary-500),var(--accent-pink))}
+.jb-ext:hover{filter:brightness(1.1)}
+.jb-job{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--color-border-tertiary)}
+.jb-job:hover{background:var(--primary-50)}
+.jb-job b{color:var(--color-text-primary);font-size:14px}
+.jb-meta{font-size:12px;color:var(--color-text-tertiary);margin-top:2px}
+.jb-sal{display:inline-block;margin-top:5px;font-size:12px;font-weight:700;color:var(--color-text-success);background:var(--accent-green-light);padding:2px 9px;border-radius:99px}
+.jb-tbl{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:12px;overflow:hidden}
+.jb-tbl th,.jb-tbl td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--color-border-tertiary)}
+.jb-tbl th{background:var(--primary-50);color:var(--primary-700);font-size:12px}
+.jb-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--primary-500),var(--accent-pink));min-width:4px}
+.jb-more{display:block;margin:14px auto 0}
+</style>
+<div class="panel" id="panel-jobs">
+  <p class="section-label">Live Anthropic openings, role guide, salary data and a job-search tool</p>
+  <div class="jb-note"><i class="ti ti-info-circle" aria-hidden="true"></i> Openings and pay ranges load live from Anthropic's public careers board. Salaries are the posted <b>base</b> ranges in USD and exclude equity and bonus. Always confirm on the posting.</div>
+
+  <div class="jb-stats" id="jbStats"><div class="jb-stat"><b>…</b><span>Loading live data</span></div></div>
+
+  <div class="jb-h">Roles you can aim for</div>
+  <div class="jb-roles" id="jbRoles"></div>
+
+  <div class="jb-h">Job search tool</div>
+  <div class="jb-tool">
+    <div class="jb-row">
+      <input class="jb-in" id="jbKw" placeholder="Keywords, e.g. Claude API engineer" value="Claude API" aria-label="Job search keywords">
+      <input class="jb-in" id="jbLoc" placeholder="Location (optional)" aria-label="Location" style="flex:0 1 180px">
+    </div>
+    <div class="jb-row" id="jbChips"></div>
+    <div class="jb-row" style="margin-bottom:0">
+      <a class="jb-ext" id="jbLi" target="_blank" rel="noopener"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      <a class="jb-ext" id="jbIn" target="_blank" rel="noopener"><i class="ti ti-search" aria-hidden="true"></i> Indeed</a>
+      <a class="jb-ext" id="jbGo" target="_blank" rel="noopener"><i class="ti ti-brand-google" aria-hidden="true"></i> Google Jobs</a>
+      <a class="jb-ext" href="https://www.anthropic.com/careers" target="_blank" rel="noopener"><i class="ti ti-building" aria-hidden="true"></i> Anthropic Careers</a>
+    </div>
+  </div>
+
+  <div class="jb-h">Open roles at Anthropic (live)</div>
+  <div class="jb-row">
+    <input class="jb-in" id="jbQ" placeholder="Filter by title, e.g. engineer, solutions" aria-label="Filter openings">
+    <select class="jb-in" id="jbDep" aria-label="Department"><option value="">All teams</option></select>
+    <select class="jb-in" id="jbLc" aria-label="Location"><option value="">All locations</option></select>
+    <select class="jb-in" id="jbSort" aria-label="Sort"><option value="new">Newest</option><option value="hi">Highest pay</option></select>
+    <label style="font-size:13px"><input type="checkbox" id="jbSalOnly"> Pay posted</label>
+  </div>
+  <div class="jb-meta" id="jbCount" style="margin-bottom:6px"></div>
+  <div id="jbList"></div>
+  <button class="jb-chip jb-more" id="jbMore" hidden>Show more</button>
+
+  <div class="jb-h">Salary by team (posted USD base, live)</div>
+  <div style="overflow-x:auto"><table class="jb-tbl"><thead><tr><th>Team</th><th>Roles</th><th>Median low</th><th>Median high</th><th style="width:25%">Typical top of range</th></tr></thead><tbody id="jbSal"></tbody></table></div>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ROLES=[
+['AI / Solutions Architect','#6366f1','Design Claude-based systems for customers: agents, RAG, MCP, security and cost.',['Claude API','MCP','RAG','Architect exam']],
+['Applied AI Engineer','#ec4899','Build and ship production features and agents on Claude with evals and monitoring.',['Python/TS','Tool use','Evals','Developer exam']],
+['Prompt / Context Engineer','#06b6d4','Craft prompts, tools and context strategy so models behave reliably.',['Prompting','Structured output','Caching']],
+['AI Agent Developer','#10b981','Build multi-step agents with the Agent SDK, subagents, hooks and memory.',['Agent SDK','Claude Code','Subagents']],
+['ML / Research Engineer','#f59e0b','Train, evaluate and align models. Usually needs strong ML and research background.',['PyTorch','Evals','Alignment']],
+['Forward Deployed / Customer Eng.','#8b5cf6','Embed with customers to turn Claude into working workflows.',['Consulting','Integration','Demos']]
+];
+$('jbRoles').innerHTML=ROLES.map(r=>'<div class="jb-role" style="--c:'+r[1]+'"><b>'+r[0]+'</b><p>'+r[2]+'</p><div class="jb-tags">'+r[3].map(t=>'<span>'+t+'</span>').join('')+'</div></div>').join('');
+// search tool
+['Claude API','LLM engineer','Prompt engineer','AI solutions architect','AI agent developer','Generative AI','MCP'].forEach(k=>{
+ const b=document.createElement('button');b.className='jb-chip';b.type='button';b.textContent=k;b.onclick=()=>{$('jbKw').value=k;upd();};$('jbChips').appendChild(b);});
+function upd(){const k=encodeURIComponent($('jbKw').value.trim()||'Claude'),l=encodeURIComponent($('jbLoc').value.trim());
+ $('jbLi').href='https://www.linkedin.com/jobs/search/?keywords='+k+(l?'&location='+l:'');
+ $('jbIn').href='https://www.indeed.com/jobs?q='+k+(l?'&l='+l:'');
+ $('jbGo').href='https://www.google.com/search?ibp=htl;jobs&q='+k+(l?'%20'+l:'')+'%20jobs';}
+$('jbKw').oninput=$('jbLoc').oninput=upd;upd();
+// live data
+const rx=/([$£€])\s?([\d,]{5,})\s*(?:[A-Z]{3})?\s*(?:[-–—]|to)\s*(?:[$£€])?\s?([\d,]{5,})/;
+let jobs=[],shown=30,loaded=false;
+const fmt=n=>'$'+Math.round(n/1000)+'k';
+const med=a=>{a=[...a].sort((x,y)=>x-y);return a.length?a[Math.floor(a.length/2)]:0;};
+function parse(j){const tmp=document.createElement('div');tmp.innerHTML=j.content||'';tmp.innerHTML=tmp.textContent;
+ const m=rx.exec(tmp.textContent.replace(/\s+/g,' '));
+ const o={t:j.title,u:j.absolute_url,d:(j.departments&&j.departments[0]&&j.departments[0].name)||'Other',l:(j.location&&j.location.name)||'',f:j.first_published||j.updated_at||'',lo:0,hi:0,cur:''};
+ if(m){o.cur=m[1];o.lo=+m[2].replace(/,/g,'');o.hi=+m[3].replace(/,/g,'');}
+ return o;}
+function render(){
+ const q=$('jbQ').value.trim().toLowerCase(),dep=$('jbDep').value,lc=$('jbLc').value,so=$('jbSalOnly').checked;
+ let a=jobs.filter(j=>(!q||j.t.toLowerCase().includes(q))&&(!dep||j.d===dep)&&(!lc||j.l.includes(lc))&&(!so||j.hi));
+ a.sort($('jbSort').value==='hi'?(x,y)=>(y.cur==='$'?y.hi:0)-(x.cur==='$'?x.hi:0):(x,y)=>String(y.f).localeCompare(String(x.f)));
+ $('jbCount').textContent=a.length+' matching roles';
+ $('jbList').innerHTML=a.slice(0,shown).map(j=>'<div class="jb-job"><div><b>'+esc(j.t)+'</b><div class="jb-meta">'+esc(j.d)+' · '+esc(j.l)+'</div>'+(j.hi?'<span class="jb-sal">'+j.cur+Math.round(j.lo/1000)+'k – '+j.cur+Math.round(j.hi/1000)+'k base</span>':'')+'</div><a class="open-btn" href="'+esc(j.u)+'" target="_blank" rel="noopener"><i class="ti ti-external-link" aria-hidden="true"></i> Apply</a></div>').join('')||'<div class="jb-meta" style="padding:14px">No roles match. Try clearing a filter.</div>';
+ $('jbMore').hidden=a.length<=shown;}
+async function load(){
+ if(loaded)return;loaded=true;
+ try{
+  const r=await fetch('https://boards-api.greenhouse.io/v1/boards/anthropic/jobs?content=true');
+  if(!r.ok)throw new Error(r.status);
+  jobs=(await r.json()).jobs.map(parse);
+ }catch(e){loaded=false;$('jbStats').innerHTML='<div class="jb-stat"><b>Unavailable</b><span>Live data could not load. Use <a href="https://www.anthropic.com/careers" target="_blank" rel="noopener">Anthropic Careers</a>.</span></div>';return;}
+ const usd=jobs.filter(j=>j.cur==='$');
+ $('jbStats').innerHTML=[[jobs.length,'open roles'],[new Set(jobs.map(j=>j.d)).size,'teams hiring'],[Math.round(100*jobs.filter(j=>j.hi).length/jobs.length)+'%','list a pay range'],[fmt(med(usd.map(j=>j.lo)))+' – '+fmt(med(usd.map(j=>j.hi))),'median base (USD)']].map(s=>'<div class="jb-stat"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>').join('');
+ const deps=[...new Set(jobs.map(j=>j.d))].sort();
+ $('jbDep').innerHTML='<option value="">All teams</option>'+deps.map(d=>'<option>'+esc(d)+'</option>').join('');
+ const cities=new Set();jobs.forEach(j=>j.l.split(/[;|]/).forEach(c=>{c=c.trim();if(c)cities.add(c);}));
+ $('jbLc').innerHTML='<option value="">All locations</option>'+[...cities].sort().map(c=>'<option>'+esc(c)+'</option>').join('');
+ const rows=deps.map(d=>{const u=usd.filter(j=>j.d===d);return u.length>=3?{d,n:u.length,lo:med(u.map(j=>j.lo)),hi:med(u.map(j=>j.hi))}:null;}).filter(Boolean).sort((a,b)=>b.hi-a.hi);
+ const mx=Math.max(...rows.map(r=>r.hi),1);
+ $('jbSal').innerHTML=rows.map(r=>'<tr><td>'+esc(r.d)+'</td><td>'+r.n+'</td><td>'+fmt(r.lo)+'</td><td>'+fmt(r.hi)+'</td><td><div class="jb-bar" style="width:'+Math.round(100*r.hi/mx)+'%"></div></td></tr>').join('');
+ render();}
+['jbQ','jbDep','jbLc','jbSort','jbSalOnly'].forEach(i=>$(i).addEventListener('input',()=>{shown=30;render();}));
+$('jbMore').onclick=()=>{shown+=30;render();};
+document.querySelector('[data-panel="jobs"]').addEventListener('click',load);
+})();
+</script>
 
 <!-- COMMUNITY -->
 <div class="panel" id="panel-community">
