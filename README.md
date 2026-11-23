@@ -5,7 +5,7 @@ A comprehensive, beautifully designed portal for Claude AI products, documentati
 ## 🌟 Features
 
 - **Modern, Vibrant UI** - Beautiful gradient design with glassmorphism effects
-- **Tab-Based Navigation** - Easy access to 8 different sections
+- **Tab-Based Navigation** - Easy access to 9 different sections
 - **Responsive Design** - Works perfectly on desktop, tablet, and mobile
 - **Interactive Elements** - Accordion Q&A, filterable content, hover effects
 - **All-in-One Resource** - Everything you need about Claude AI in one place
@@ -14,10 +14,10 @@ A comprehensive, beautifully designed portal for Claude AI products, documentati
 
 ### 1. Products
 Explore all Claude models and product surfaces:
-- Claude Fable 5 (Most capable — flagship)
-- Claude Opus 4.8 (Most capable Opus tier)
-- Claude Sonnet 5 (Balanced intelligence & speed)
-- Claude Haiku 4.5 (Fastest model)
+- Claude Fable 5.2 (Most capable — flagship)
+- Claude Opus 5.5 (Most capable Opus tier)
+- Claude Sonnet 5.5 (Balanced intelligence & speed)
+- Claude Haiku 5.5 (Fastest model)
 - Claude.ai web/mobile/desktop app
 - Claude API & platform
 - Claude Code (agentic CLI tool)
@@ -41,6 +41,9 @@ Structured courses and learning paths:
 - GitHub courses and tutorials
 - DeepLearning.AI short courses
 
+### 3b. 5-Day Roadmap
+A 50-hour, 5-day plan (10 hrs/day) from foundations to certification sprint, with hour-by-hour blocks and a saved-in-browser progress tracker.
+
 ### 4. Certifications
 Official Anthropic credentials:
 - Claude Certified Architect (CCA) — Foundations
@@ -56,7 +59,7 @@ Curated video content:
 - Community tutorials
 
 ### 6. Interview Q&A
-15+ sample interview questions with detailed answers covering:
+50 case-based interview questions with detailed answers covering:
 - API knowledge
 - Prompt engineering
 - Claude Code
@@ -64,7 +67,7 @@ Curated video content:
 - Agentic system design
 
 ### 7. Cert Practice
-15 practice questions modeled on the official CCA exam with detailed explanations.
+50 practice questions modeled on the official CCA exam with detailed explanations.
 
 ### 8. Community
 Stay connected with:

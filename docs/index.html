@@ -852,6 +852,23 @@ body::after {
     height: 48px;
   }
 }
+
+/* ===== Roadmap ===== */
+.rm-progress{height:8px;background:var(--primary-100);border-radius:99px;margin-top:12px;overflow:hidden}
+.rm-bar{height:100%;width:0;background:linear-gradient(90deg,var(--primary-500),var(--accent-pink));transition:width .3s}
+.rm-count{font-size:12px;margin-top:6px;color:var(--primary-700)}
+.rm-day{background:white;border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);padding:1rem 1.25rem;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.rm-day-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.rm-day-tag{background:linear-gradient(135deg,var(--primary-500),var(--accent-pink));color:#fff;font-weight:700;font-size:12px;padding:3px 10px;border-radius:99px}
+.rm-day-title{font-weight:700;font-size:15px;flex:1}
+.rm-day-hrs{font-size:12px;color:var(--primary-700);font-weight:600}
+.rm-block{display:flex;gap:12px;align-items:flex-start;padding:9px 4px;border-top:1px solid var(--color-border-primary);cursor:pointer;line-height:1.5}
+.rm-block input{margin-top:4px;accent-color:var(--primary-500)}
+.rm-hrs{min-width:34px;font-weight:700;color:var(--primary-600);font-size:13px}
+.rm-body{display:flex;flex-direction:column;font-size:13px}
+.rm-title{font-weight:600}
+.rm-desc{color:var(--color-text-secondary,#555)}
+.rm-block:has(input:checked) .rm-title{text-decoration:line-through;opacity:.6}
 </style>
 </head>
 <body>
@@ -867,6 +884,7 @@ body::after {
   <button class="tab-btn active" data-panel="products"><i class="ti ti-layout-grid" aria-hidden="true"></i> Products</button>
   <button class="tab-btn" data-panel="docs"><i class="ti ti-book" aria-hidden="true"></i> Documentation</button>
   <button class="tab-btn" data-panel="learning"><i class="ti ti-school" aria-hidden="true"></i> Learning</button>
+  <button class="tab-btn" data-panel="roadmap"><i class="ti ti-route" aria-hidden="true"></i> 5-Day Roadmap</button>
   <button class="tab-btn" data-panel="certs"><i class="ti ti-certificate" aria-hidden="true"></i> Certifications</button>
   <button class="tab-btn" data-panel="videos"><i class="ti ti-player-play" aria-hidden="true"></i> Videos</button>
   <button class="tab-btn" data-panel="interview"><i class="ti ti-message-question" aria-hidden="true"></i> Interview Q&A</button>
@@ -881,8 +899,8 @@ body::after {
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Claude Fable 5</div>
-        <div class="ref-desc">Anthropic's most capable widely released model — built for the most demanding reasoning and long-horizon agentic work. Thinking is always on; 1M-token context, up to 128K output. Model ID: <code>claude-fable-5</code>.</div>
+        <div class="ref-title">Claude Fable 5.2</div>
+        <div class="ref-desc">Anthropic's most capable widely released model — built for the most demanding reasoning and long-horizon agentic work. Thinking is always on; 1M-token context, up to 128K output. Model ID: <code>claude-fable-5-2</code>.</div>
         <div class="ref-meta"><span class="badge badge-new">Flagship</span><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -890,8 +908,8 @@ body::after {
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Claude Opus 4.8</div>
-        <div class="ref-desc">Most capable Opus-tier model — highly autonomous, state-of-the-art on long-horizon agentic coding, knowledge work, and memory. 1M-token context at standard pricing. Fast mode available. Model ID: <code>claude-opus-4-8</code>.</div>
+        <div class="ref-title">Claude Opus 5.5</div>
+        <div class="ref-desc">Most capable Opus-tier model — highly autonomous, state-of-the-art on long-horizon agentic coding, knowledge work, and memory. 1M-token context at standard pricing. Fast mode available. Model ID: <code>claude-opus-5-5</code>.</div>
         <div class="ref-meta"><span class="badge badge-new">Latest Opus</span><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude/opus"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -899,8 +917,8 @@ body::after {
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Claude Sonnet 5</div>
-        <div class="ref-desc">The best balance of speed and intelligence — near-Opus quality on coding and agentic work at Sonnet cost. Adaptive thinking on by default; 1M-token context. Model ID: <code>claude-sonnet-5</code>.</div>
+        <div class="ref-title">Claude Sonnet 5.5</div>
+        <div class="ref-desc">The best balance of speed and intelligence — near-Opus quality on coding and agentic work at Sonnet cost. Adaptive thinking on by default; 1M-token context. Model ID: <code>claude-sonnet-5-5</code>.</div>
         <div class="ref-meta"><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude/sonnet"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -908,8 +926,8 @@ body::after {
 
     <div class="ref-item">
       <div>
-        <div class="ref-title">Claude Haiku 4.5</div>
-        <div class="ref-desc">Fastest model with near-frontier intelligence. Ideal for high-throughput classification, routing, simple extraction, and sub-agent roles. Model ID: <code>claude-haiku-4-5</code>.</div>
+        <div class="ref-title">Claude Haiku 5.5</div>
+        <div class="ref-desc">Fastest model with near-frontier intelligence. Ideal for high-throughput classification, routing, simple extraction, and sub-agent roles. Model ID: <code>claude-haiku-5-5</code>.</div>
         <div class="ref-meta"><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://www.anthropic.com/claude/haiku"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -998,7 +1016,7 @@ body::after {
     <div class="ref-item">
       <div>
         <div class="ref-title">Models overview</div>
-        <div class="ref-desc">Compare Fable 5, Opus 4.8, Sonnet 5, and Haiku 4.5 — pricing, context windows, knowledge cutoffs, and which cloud platforms support each model.</div>
+        <div class="ref-desc">Compare Fable 5.2, Opus 5.5, Sonnet 5.5, and Haiku 5.5 — pricing, context windows, knowledge cutoffs, and which cloud platforms support each model.</div>
         <div class="ref-meta"><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://docs.claude.com/en/docs/about-claude/models/overview"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -1025,7 +1043,7 @@ body::after {
     <div class="ref-item">
       <div>
         <div class="ref-title">Prompting best practices (Claude 5 &amp; 4.x)</div>
-        <div class="ref-desc">The single living reference for prompt engineering with Fable 5, Opus 4.8, Sonnet 5, and Haiku 4.5. Covers foundational techniques, adaptive thinking, effort control, tool use, and agentic systems.</div>
+        <div class="ref-desc">The single living reference for prompt engineering with Fable 5.2, Opus 5.5, Sonnet 5.5, and Haiku 5.5. Covers foundational techniques, adaptive thinking, effort control, tool use, and agentic systems.</div>
         <div class="ref-meta"><span class="badge badge-new">Updated</span><span class="badge badge-official">Official</span></div>
       </div>
       <button class="open-btn" data-url="https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/claude-prompting-best-practices"><i class="ti ti-external-link" aria-hidden="true"></i> Open</button>
@@ -1372,6 +1390,57 @@ body::after {
   </div>
 </div>
 
+<!-- ROADMAP -->
+<div class="panel" id="panel-roadmap">
+  <p class="section-label">5-day end-to-end learning roadmap — 10 hours/day, finishing with Claude certification prep</p>
+  <div class="info-banner">
+    <strong>50 hours total.</strong> Day 1 foundations, Day 2 API, Day 3 Claude Code &amp; MCP, Day 4 agents &amp; production design, Day 5 certification sprint. Tick blocks as you finish them; progress is saved in your browser. Hour blocks are suggested: 50-minute focus + 10-minute break, plus a real lunch.
+    <div class="rm-progress"><div class="rm-bar" id="rmBar"></div></div>
+    <div class="rm-count" id="rmCount">0 of 25 blocks complete</div>
+  </div>
+  <div class="rm-day">
+    <div class="rm-day-head"><span class="rm-day-tag">Day 1</span><span class="rm-day-title">Foundations: models, prompting, Claude product surfaces</span><span class="rm-day-hrs">10 hrs</span></div>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d1b1"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Anthropic Academy: Claude 101 + AI Fluency</span><span class="rm-desc">Learn the product surfaces, projects, artifacts, skills; take notes on the model lineup (Fable / Opus / Sonnet / Haiku).</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d1b2"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Models, pricing, context windows</span><span class="rm-desc">Read the Models overview. Build a one-page cheat sheet: when to pick each model, context size, price tiers.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d1b3"><span class="rm-hrs">3h</span><span class="rm-body"><span class="rm-title">Prompt engineering deep dive</span><span class="rm-desc">Clear instructions, XML tags, few-shot, chain-of-thought, prefill, system prompts, long-context placement. Rewrite 5 weak prompts.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d1b4"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Hands-on lab: prompt + eval set</span><span class="rm-desc">Create a 20-case labeled dataset; iterate a classifier prompt from baseline to 90%+; record what changed each time.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d1b5"><span class="rm-hrs">1h</span><span class="rm-body"><span class="rm-title">Review &amp; quiz</span><span class="rm-desc">Interview Q&amp;A 1-15 (prompt + API categories). Write down every miss.</span></span></label>
+  </div>
+  <div class="rm-day">
+    <div class="rm-day-head"><span class="rm-day-tag">Day 2</span><span class="rm-day-title">Claude API &amp; SDKs: the build-with-Claude core</span><span class="rm-day-hrs">10 hrs</span></div>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d2b1"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Messages API fundamentals</span><span class="rm-desc">Roles, system, max_tokens, stop_reason, streaming, errors, retries and rate limits. Run each in the SDK.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d2b2"><span class="rm-hrs">3h</span><span class="rm-body"><span class="rm-title">Tool use end-to-end</span><span class="rm-desc">Define tools with schemas, run the tool_use loop, parallel calls, tool_choice, structured output. Build a 3-tool assistant.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d2b3"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Prompt caching, token counting, Batch API</span><span class="rm-desc">Add cache_control to a RAG prototype; measure cost with/without; run a 100-item batch job.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d2b4"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Vision, PDFs, Files, citations, extended thinking</span><span class="rm-desc">Extract data from a PDF with citations; compare results with thinking on/off.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d2b5"><span class="rm-hrs">1h</span><span class="rm-body"><span class="rm-title">Review &amp; quiz</span><span class="rm-desc">Cert Practice Q1-Q10 and Q16-Q25 (API). Redo anything missed.</span></span></label>
+  </div>
+  <div class="rm-day">
+    <div class="rm-day-head"><span class="rm-day-tag">Day 3</span><span class="rm-day-title">Claude Code &amp; MCP</span><span class="rm-day-hrs">10 hrs</span></div>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d3b1"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Claude Code fundamentals</span><span class="rm-desc">Install, CLAUDE.md hierarchy, slash commands, plan mode, /compact vs /clear, permission modes, IDE integration.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d3b2"><span class="rm-hrs">3h</span><span class="rm-body"><span class="rm-title">Hooks, sub-agents, skills, headless mode</span><span class="rm-desc">Write a PreToolUse guard and a PostToolUse formatter; create a sub-agent and a skill; run claude -p in a script.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d3b3"><span class="rm-hrs">3h</span><span class="rm-body"><span class="rm-title">Model Context Protocol</span><span class="rm-desc">Primitives (tools/resources/prompts), stdio vs HTTP, OAuth. Build a small MCP server and connect it to Claude Code.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d3b4"><span class="rm-hrs">1h</span><span class="rm-body"><span class="rm-title">Security of MCP and permissions</span><span class="rm-desc">Tool poisoning, least privilege, allow/deny rules, sandboxing.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d3b5"><span class="rm-hrs">1h</span><span class="rm-body"><span class="rm-title">Review &amp; quiz</span><span class="rm-desc">Interview Q&amp;A (Claude Code + MCP) and Cert Practice (Claude Code + MCP) questions.</span></span></label>
+  </div>
+  <div class="rm-day">
+    <div class="rm-day-head"><span class="rm-day-tag">Day 4</span><span class="rm-day-title">Agentic architecture, evals, cost, safety</span><span class="rm-day-hrs">10 hrs</span></div>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d4b1"><span class="rm-hrs">3h</span><span class="rm-body"><span class="rm-title">Agent design patterns</span><span class="rm-desc">Prompt chaining, routing, parallelization, orchestrator-workers, evaluator-optimizer. Draw each pattern and name a use case.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d4b2"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Context engineering &amp; memory</span><span class="rm-desc">Tool result hygiene, summarization, external notes, sub-agent isolation, long-running task checkpoints.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d4b3"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Evals and observability</span><span class="rm-desc">Golden sets, code vs LLM graders, trajectory evals, telemetry fields, canary rollouts.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d4b4"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Cost, scaling, reliability, security</span><span class="rm-desc">Routing across models, caching strategy, multi-tenant isolation, prompt injection defense, human-in-the-loop design.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d4b5"><span class="rm-hrs">1h</span><span class="rm-body"><span class="rm-title">Capstone sketch</span><span class="rm-desc">Whiteboard a production support agent: tools, guardrails, evals, cost model, rollout plan.</span></span></label>
+  </div>
+  <div class="rm-day">
+    <div class="rm-day-head"><span class="rm-day-tag">Day 5</span><span class="rm-day-title">Certification sprint &amp; interview readiness (end-to-end)</span><span class="rm-day-hrs">10 hrs</span></div>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d5b1"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Domain gap analysis</span><span class="rm-desc">Map your weak spots to the five CCA domains (Agentic ~25%, Claude Code ~20%, API ~20%, Prompting ~20%, Cost/design ~15%). Re-read only those.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d5b2"><span class="rm-hrs">3h</span><span class="rm-body"><span class="rm-title">Full practice exam, timed</span><span class="rm-desc">All 50 Cert Practice questions plus the Claude Certifications practice hub. Review every wrong answer and write the rule behind it.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d5b3"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Interview drill</span><span class="rm-desc">Answer all 50 interview questions aloud in 2 minutes each, then compare with the model answer. Focus on case questions.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d5b4"><span class="rm-hrs">1h</span><span class="rm-body"><span class="rm-title">Official exam logistics</span><span class="rm-desc">Register via the Partner Network / Pearson VUE (OnVUE), check ID, system, and room requirements; confirm current exam guide and fees.</span></span></label>
+    <label class="rm-block"><input type="checkbox" class="rm-check" data-id="d5b5"><span class="rm-hrs">2h</span><span class="rm-body"><span class="rm-title">Final review + rest</span><span class="rm-desc">Cheat sheet pass, weak-area flash cards, then stop. Sleep beats cramming.</span></span></label>
+  </div>
+  <div class="disclaimer">Exam names, fees, and delivery details change — verify on <strong>anthropic.com/partners</strong> before booking. Sources to lean on: Anthropic Academy, docs.claude.com, and the practice tabs in this portal.</div>
+</div>
+
 <!-- VIDEOS -->
 <div class="panel" id="panel-videos">
   <p class="section-label">Official channels, playlists, and curated tutorials</p>
@@ -1467,7 +1536,7 @@ body::after {
 
 <!-- INTERVIEW Q&A -->
 <div class="panel" id="panel-interview">
-  <p class="section-label">Sample interview questions — click any question to expand the answer</p>
+  <p class="section-label">50 interview questions &amp; answers (case-based) — click any question to expand; filter by topic</p>
   <div class="filter-row">
     <button class="filter-btn active" data-cat="all">All</button>
     <button class="filter-btn" data-cat="api">API</button>
@@ -1480,7 +1549,7 @@ body::after {
 
     <div class="qa-item" data-cat="api">
       <div class="qa-q">1. How do you choose between Fable, Opus, Sonnet, and Haiku? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
-      <div class="qa-a"><div class="qa-a-inner"><strong>Fable 5</strong> is the most capable model — reach for it on the hardest reasoning and long-horizon agentic work. <strong>Opus 4.8</strong> is the most capable Opus tier — highly autonomous coding, knowledge work, and memory. <strong>Sonnet 5</strong> balances intelligence and cost — near-Opus quality at Sonnet price, the default for most production workloads and agents. <strong>Haiku 4.5</strong> is fastest and cheapest — ideal for classification, routing, and sub-agent roles. Strategy: start with Sonnet 5, escalate to Opus 4.8 or Fable 5 where evals show quality gaps, downgrade to Haiku where latency or cost dominates.</div></div>
+      <div class="qa-a"><div class="qa-a-inner"><strong>Fable 5.2</strong> is the most capable model — reach for it on the hardest reasoning and long-horizon agentic work. <strong>Opus 5.5</strong> is the most capable Opus tier — highly autonomous coding, knowledge work, and memory. <strong>Sonnet 5.5</strong> balances intelligence and cost — near-Opus quality at Sonnet price, the default for most production workloads and agents. <strong>Haiku 5.5</strong> is fastest and cheapest — ideal for classification, routing, and sub-agent roles. Strategy: start with Sonnet 5.5, escalate to Opus 5.5 or Fable 5.2 where evals show quality gaps, downgrade to Haiku where latency or cost dominates.</div></div>
     </div>
 
     <div class="qa-item" data-cat="api">
@@ -1553,12 +1622,187 @@ body::after {
       <div class="qa-a"><div class="qa-a-inner">Extended thinking gives Claude a dedicated internal reasoning budget before producing its final answer. Set a <code>thinking.budget_tokens</code> parameter to control how long Claude reasons. Use it for tasks that benefit from deeper deliberation: hard math, complex logic, multi-step planning, or any situation where chain-of-thought alone isn't sufficient. Not recommended for simple tasks — it adds latency and cost.</div></div>
     </div>
 
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">16. Case: Your API returns 429s during a marketing spike. Walk me through your response. <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Separate the causes. (1) <strong>Short-term:</strong> exponential backoff with jitter, honoring the <code>retry-after</code> header; queue and smooth bursts with a token-bucket limiter on your side. (2) <strong>Reduce load:</strong> prompt caching, shorter outputs via <code>max_tokens</code>, route simple calls to Haiku. (3) <strong>Move work off the hot path:</strong> push non-interactive jobs to the Batch API. (4) <strong>Capacity:</strong> request higher limits or use a cloud provider (Bedrock/Vertex) as secondary route. (5) <strong>Observe:</strong> alert on 429 rate and queue depth.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">17. What is the difference between <code>max_tokens</code>, the context window, and output limits? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">The <strong>context window</strong> is the total tokens the model can attend to (input + output). <code>max_tokens</code> is <em>your</em> cap on generated tokens for one response — generation stops with <code>stop_reason: max_tokens</code> if reached. The model also has a hard maximum output size. Always set <code>max_tokens</code> deliberately: too low truncates answers (and breaks JSON), too high wastes latency budget and lets runaway outputs happen.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">18. How do you stream responses and what must you handle that non-streaming code doesn't? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Use <code>stream: true</code> (SDK stream helpers) and consume server-sent events: <code>message_start</code>, <code>content_block_delta</code>, <code>message_delta</code>, <code>message_stop</code>. Handle: partial text assembly, partial tool-call JSON (accumulate <code>input_json_delta</code> and parse only at block end), mid-stream errors/overload events, client disconnects, and final <code>stop_reason</code>/usage which arrive near the end. Streaming improves perceived latency; it does not reduce total cost.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">19. Case: A JSON-extraction pipeline fails 3% of the time on malformed output. How do you fix it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Move from 'ask nicely for JSON' to enforced structure: define a <strong>tool with a JSON schema</strong> and force it via <code>tool_choice</code> (or use structured-output features where available), so the model emits schema-shaped arguments. Then add a validator (Pydantic/Zod); on failure, retry once feeding the validation error back to Claude. Also check <code>stop_reason</code> for truncation, prefill/stop sequences where applicable, and add the failing inputs to an eval set so the fix is measured.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">20. How do you count and control cost per request before sending it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Use the token-counting endpoint to measure input tokens for a full request (system, tools, messages, images) without running it. Multiply by per-model prices, add expected output tokens. Control cost via: cache stable prefixes, trim history (summaries), cap <code>max_tokens</code>, choose the smallest adequate model, batch offline work, and log <code>usage</code> (including cache read/write tokens) per request to attribute spend by feature or tenant.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">21. When would you choose the Batch API, and how do you design around it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Choose it for latency-tolerant, high-volume work: evals, backfills, classification of archives, content generation, nightly enrichment. It is priced lower than real-time and completes asynchronously (up to ~24h). Design: idempotent <code>custom_id</code> per item, store inputs durably, poll or webhook for completion, map results by <code>custom_id</code>, handle per-item errors/expiry with a re-submit path. Never use it for anything a user is waiting on.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">22. How do you send images or PDFs to Claude, and what are the gotchas? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Add <code>image</code> or <code>document</code> content blocks (base64 or URL/file reference) before the text question. Gotchas: images and PDF pages consume tokens (cost scales with size/pages), resolution is downscaled above limits so tiny text may be lost, put the media <em>before</em> the question for best results, label multiple images, and for long PDFs consider chunking or the Files API plus caching to avoid resending.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">23. What does <code>stop_reason</code> tell you and how should your code branch on it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner"><code>end_turn</code>: natural finish. <code>max_tokens</code>: truncated — raise the cap or continue the turn. <code>tool_use</code>: execute tools and return <code>tool_result</code> blocks. <code>stop_sequence</code>: hit a custom stop string. <code>pause_turn</code>/<code>refusal</code>: handle server-tool pauses and safety refusals gracefully (surface a message, don't retry blindly). A robust agent loop is literally a <code>while stop_reason == 'tool_use'</code> loop with these branches.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">24. Case: Your classifier prompt scores 78% and the team wants a bigger model. What do you try first? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Diagnose before upgrading. Build a labeled eval set, read the errors by category, then fix the prompt: sharper label definitions, 3–8 diverse few-shot examples including hard negatives, XML-structured input, ask for brief reasoning <em>before</em> the label, constrain the output to an enum. Re-measure. Only if evals plateau do you try a larger model — and then compare cost per correct answer, not accuracy alone.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">25. How do you write effective few-shot examples? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Make them <strong>representative, diverse, and correct</strong>: cover edge cases and the exact output format, wrap them in <code>&lt;examples&gt;</code>/<code>&lt;example&gt;</code> tags, and keep them distinct from the real input. Avoid examples that are all the same shape (Claude over-copies them). Include at least one hard or ambiguous case with the desired handling. 3–5 good examples usually beat 20 mediocre ones.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">26. What is prefilling the assistant turn and what is it good for? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">You start the assistant message yourself (e.g. <code>{</code> or <code>&lt;answer&gt;</code>) so Claude continues from there. It forces output format, skips preambles, and keeps role-play in character. Caveats: newer models and thinking modes may restrict or not benefit from prefill — prefer structured outputs/tool schemas for hard format guarantees, and never end a prefill with trailing whitespace.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">27. How do you get reliable chain-of-thought without leaking it to end users? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Ask Claude to reason in a <code>&lt;thinking&gt;</code> block and put the final answer in <code>&lt;answer&gt;</code>, then parse only the answer tag. Or use the built-in extended/adaptive thinking feature, where reasoning is returned as separate thinking blocks you simply don't display. Keep thinking blocks intact when continuing tool-use turns so the model keeps its reasoning thread.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">28. Case: Users paste documents containing instructions that hijack your assistant. How do you structure the prompt? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Treat all external content as <strong>data, not instructions</strong>. Wrap it in tags (<code>&lt;document&gt;</code>), state in the system prompt that anything inside is untrusted and must never override instructions, put the task <em>after</em> the content, and restrict capabilities (least-privilege tools). Prompting reduces risk but does not eliminate it — add output filtering, human confirmation for sensitive actions, and injection tests in your evals.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">29. How do you handle very long documents (200K+ tokens) accurately? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Place documents at the top, query at the end; label each with <code>&lt;document index&gt;</code>, <code>&lt;source&gt;</code> tags; ask Claude to first extract relevant quotes, then answer from the quotes. Use prompt caching for repeated reads. If the corpus exceeds context or accuracy dips, use retrieval (RAG) to fetch only relevant chunks, or a map-reduce pattern with sub-agents.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">30. What makes a good system prompt for a production assistant? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Role and audience, goals, hard constraints (what never to do), tone, output format, how to handle uncertainty/out-of-scope requests, tool-usage guidance, and a few examples. Explain <em>why</em> for important rules — Claude generalizes better from reasons than bare commands. Keep it versioned in source control and covered by evals; change one thing at a time.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="prompt">
+      <div class="qa-q">31. How would you evaluate a prompt change before shipping it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Maintain a golden dataset (real, diverse, including adversarial cases) with graders: exact-match/code graders where possible, LLM-as-judge with a rubric and structured scores where not, human spot-checks for calibration. Run old vs new prompt on the same set, compare metrics, latency, and cost, check regressions by slice, then canary in production. Tie it to CI so every prompt edit runs the suite.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">32. How do you structure a CLAUDE.md for a large monorepo? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Keep the root file short: purpose, build/test/lint commands, architecture map, conventions, and gotchas. Use <strong>nested CLAUDE.md files</strong> in subdirectories (loaded when working there) and <code>@path</code> imports for longer docs. Put personal preferences in <code>~/.claude/CLAUDE.md</code> or a git-ignored local file. Avoid duplicating what the code already shows; update it when Claude repeatedly makes the same mistake.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">33. Case: Claude Code keeps running a destructive command you don't want. What are your options? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Layer controls: (1) <strong>permissions</strong> in <code>settings.json</code> — deny rules for specific commands/paths, allow only safe ones; (2) a <strong>PreToolUse hook</strong> that inspects the tool call and blocks with a message; (3) run in a sandbox/container or a git worktree; (4) keep default permission mode so it asks before risky actions; (5) add the rule to CLAUDE.md as guidance. Deterministic enforcement belongs in permissions/hooks, not in prose.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">34. What are custom slash commands and skills, and how do they differ? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Slash commands are reusable prompt templates stored as markdown (project or user scope) invoked explicitly with <code>/name</code>, supporting arguments. <strong>Skills</strong> are folders with a <code>SKILL.md</code> plus scripts/resources that Claude can discover and load on demand based on their description — progressive disclosure keeps context small. Use commands for explicit workflows you trigger; skills for capabilities Claude should pull in itself.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">35. How does Claude Code run in CI/headless mode and what do you watch for? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Use print/headless mode (<code>claude -p</code>) with <code>--output-format json</code> or streaming JSON, a scoped tool allowlist, and a max-turns budget. Provide secrets via env, never in prompts. Watch for: non-interactive permission prompts (pre-approve narrowly), cost/turn caps, idempotency, posting results as PR comments, and treating repo content as untrusted input (prompt-injection risk in PRs from forks).</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">36. Case: A session degrades after hours of work — repeated mistakes, forgotten decisions. What do you do? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Context has bloated or drifted. Use <code>/compact</code> with focus instructions, or better, write decisions/progress to a file (plan.md / notes) and start a fresh session with <code>/clear</code> that loads it. Delegate noisy exploration to sub-agents so their output stays out of the main context. Keep CLAUDE.md lean, and break big tasks into checkpointed steps.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="code">
+      <div class="qa-q">37. How do you use plan mode and when is it worth it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Plan mode makes Claude research and propose a plan without editing files or running mutating commands, so you can review and correct approach before any change. Use it for multi-file refactors, unfamiliar code, migrations, and anything ambiguous or risky. It front-loads cheap thinking and prevents expensive wrong implementations.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">38. Case: You need Claude to read Jira, query a warehouse, and post to Slack. Design the MCP layer. <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">One focused MCP server per system (or vetted existing ones), each exposing a small set of well-named, well-described tools with narrow schemas. Auth per server using scoped, short-lived credentials (OAuth where possible); read-only credentials for the warehouse; write tools gated behind confirmation. Set tool allowlists per agent so each only sees what it needs. Log every call, apply timeouts/rate limits, and test tool descriptions with evals.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">39. What are the three MCP primitives and how do they differ? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner"><strong>Tools</strong> — model-controlled actions the LLM chooses to call. <strong>Resources</strong> — application-controlled read-only context (files, records) addressed by URI. <strong>Prompts</strong> — user-controlled reusable templates surfaced as commands. The distinction is who decides to invoke: model, app, or user.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">40. Compare stdio and streamable HTTP transports for MCP. <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner"><strong>stdio</strong>: the client launches the server as a local subprocess — simple, no network, ideal for local dev tools, one client per process. <strong>Streamable HTTP</strong>: a remote server over HTTP (with optional streaming) — supports many clients, centralized auth (OAuth), deployment and monitoring. Choose stdio for local/personal tooling, HTTP for shared, multi-user, production servers.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">41. How should MCP tools report errors so the model can recover? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Return a tool result flagged as an error with an actionable, human-readable message (what failed, why, what to try) rather than throwing or returning an empty result. Distinguish retryable (timeout, rate limit) from non-retryable (invalid argument, not found) failures and include valid-value hints. Claude can then self-correct or escalate instead of looping.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="mcp">
+      <div class="qa-q">42. What is the risk of connecting many MCP servers at once? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Tool-definition bloat consumes context and degrades tool selection; overlapping tool names confuse routing; every server expands the attack surface (malicious descriptions/'tool poisoning', exfiltration via a permissive tool combination). Mitigate by loading only needed servers per task, using tool search/deferred loading, namespacing, auditing third-party servers, and applying least-privilege per agent.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">43. Case: Design a customer-support agent that can issue refunds. Where do you put humans in the loop? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Tiered autonomy: read-only lookups and answers are automatic; refunds under a threshold with policy-verified eligibility are automatic with logging; larger or ambiguous refunds go to an approval queue with Claude's evidence summary. Enforce limits in the <em>tool/back-end</em> (not the prompt), validate idempotency keys, escalate on low confidence, repeated user frustration, or policy conflict, and audit every action.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">44. Orchestrator-workers vs. a single agent with many tools — how do you decide? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Start single-agent: simpler, cheaper, easier to debug. Move to orchestrator-workers when subtasks are parallelizable, need different contexts/tools/permissions, or a single context would overflow. Multi-agent costs more tokens and adds coordination failures, so justify it with eval gains. Give workers narrow instructions and have them return concise structured summaries.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">45. How do you make an agent resilient to tool failures and long-running tasks? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Timeouts and retries with backoff per tool, structured errors fed back to the model, loop/turn/budget caps, checkpointing state externally (database/file) so work resumes after crash, idempotent side effects, and a final verification step. For long jobs, persist a progress file or task list so a fresh context can pick up where the last stopped.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">46. How do you evaluate an agent, not just a single prompt? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Evaluate trajectories and outcomes: task success on a scenario suite (often with a sandboxed environment and programmatic end-state checks), tool-call correctness, number of steps/tokens/latency, safety violations, and recovery from injected failures. Use LLM judges for qualitative criteria with rubrics, replay real transcripts, and run each case several times since agents are non-deterministic.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">47. What is context engineering for agents? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Deliberately curating what is in the window at each step: concise system prompt, only relevant tools, retrieved snippets over whole files, summaries of old turns, clearing stale tool results, and external memory (files/notes) for durable facts. Goal: the smallest set of high-signal tokens that lets the model make the next decision well.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="agent">
+      <div class="qa-q">48. Case: Two sub-agents return conflicting findings. How should the orchestrator resolve it? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Don't silently pick one. Require workers to return claims with evidence/sources and confidence; have the orchestrator compare, ask a verifier sub-agent (or tool-based check) to test the disputed claim, and report remaining uncertainty explicitly in the final answer. Log conflicts as signals for improving worker prompts.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">49. How do you design multi-tenant isolation when many customers share one Claude integration? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Never mix tenants in one context. Scope retrieval and tools by tenant ID enforced in code, use per-tenant cache prefixes (cache is keyed by prefix content), separate API keys/workspaces for cost attribution and rate-limit isolation where needed, redact PII, and log usage per tenant. Test with cross-tenant leakage cases in your evals.</div></div>
+    </div>
+
+    <div class="qa-item" data-cat="api">
+      <div class="qa-q">50. What are Anthropic's data-handling and safety considerations you must mention to an enterprise buyer? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+      <div class="qa-a"><div class="qa-a-inner">Cover: zero-data-retention options and commercial terms on training use, region/data-residency choices via cloud providers, encryption, access controls and audit logging on your side, PII minimization/redaction, content filtering and abuse monitoring, compliance attestations, and the shared-responsibility split between Anthropic, the cloud platform, and the customer. Cite the current Anthropic trust documentation rather than assuming.</div></div>
+    </div>
+
   </div>
 </div>
 
 <!-- CERT PRACTICE -->
 <div class="panel" id="panel-certqa">
-  <p class="section-label">CCA foundations — practice questions (click to reveal answers)</p>
+  <p class="section-label">CCA practice — 50 scenario questions with answers (click to reveal)</p>
   <div class="ref-list" style="margin-bottom:1.25rem">
     <div class="ref-item">
       <div>
@@ -1618,7 +1862,7 @@ body::after {
 
   <div class="qa-item">
     <div class="qa-q">Q10. Which model is best for high-volume, low-complexity classification at the lowest cost? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
-    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Claude Haiku 4.5.</strong> Fastest and cheapest current Claude model with near-frontier intelligence — designed for high-throughput classification, routing, simple extraction, and sub-agent roles where Sonnet or Opus would be overkill.</div></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Claude Haiku 5.5.</strong> Fastest and cheapest current Claude model with near-frontier intelligence — designed for high-throughput classification, routing, simple extraction, and sub-agent roles where Sonnet or Opus would be overkill.</div></div>
   </div>
 
   <div class="qa-item">
@@ -1644,6 +1888,181 @@ body::after {
   <div class="qa-item">
     <div class="qa-q">Q15. The Batch API offers what tradeoff compared to the real-time Messages API? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
     <div class="qa-a"><div class="qa-a-inner"><strong>Answer: ~50% lower cost in exchange for asynchronous, non-real-time completion.</strong> Submit a batch of requests; results return within a service window (up to 24 hours). Ideal for offline pipelines, evaluations, bulk data analysis, and labeling tasks where immediate responses aren't needed.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q16. [Agentic] A research agent loops forever, re-searching the same query. Which fix addresses the root cause? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Add loop controls AND make failures informative.</strong> Cap turns/tool calls and detect repeated identical calls, but also return structured tool results that say 'no new results' so the model changes strategy. A max-turn limit alone only stops the symptom.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q17. [Agentic] When is a multi-agent (orchestrator + workers) design most justified over a single agent? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: When subtasks are independent/parallelizable or need separate contexts and permissions.</strong> Otherwise a single agent is cheaper, simpler, and easier to debug; multi-agent adds token cost and coordination failure modes.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q18. [Agentic] Where should a hard business rule such as 'refunds over $500 need approval' be enforced? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: In the tool/backend code (deterministic enforcement).</strong> Prompts are guidance and can be bypassed by injection or error; the refund tool itself must reject or route over-limit requests to approval.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q19. [Agentic] An agent's tool returns a 40K-token JSON blob each call and quality drops. Best fix? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Make the tool return only what's needed</strong> — filter fields, paginate, summarize, or return IDs with a detail-fetch tool. Large irrelevant tool output crowds the context and degrades reasoning.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q20. [Agentic] Which pattern fits a workflow whose steps are known in advance (extract → validate → format)? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Prompt chaining / a fixed workflow.</strong> Use deterministic orchestration in code with an LLM call per step; reserve autonomous agents for open-ended tasks where steps can't be predetermined.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q21. [Agentic] How should an agent handle an ambiguous user request that could trigger an irreversible action? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Ask a clarifying question or request confirmation before acting.</strong> Cost of one extra turn is small compared to an irreversible wrong action; pair with least-privilege tools.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q22. [Claude Code] You want a safety check that ALWAYS runs before any shell command. Which mechanism? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: A PreToolUse hook</strong> (matching the Bash tool) that can inspect and block the call. Hooks run deterministically; CLAUDE.md instructions are advisory.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q23. [Claude Code] Where do team-shared project permissions and MCP servers belong, so they are version-controlled? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Project-scoped config committed to the repo</strong> (<code>.claude/settings.json</code>, <code>.mcp.json</code>); personal overrides go in the local/user settings that are not committed.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q24. [Claude Code] A sub-task needs to read 200 files and report one conclusion. Best approach? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Delegate to a sub-agent</strong> so the file reads stay in its isolated context and only the conclusion returns to the main session.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q25. [Claude Code] What does <code>/clear</code> do versus <code>/compact</code>? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: <code>/clear</code> resets the conversation context entirely; <code>/compact</code> replaces history with a summary</strong> (optionally guided by instructions) so you keep continuity at lower token cost.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q26. [Claude Code] You need different Claude Code behavior for the <code>frontend/</code> directory only. What's the cleanest approach? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: A nested <code>CLAUDE.md</code> inside <code>frontend/</code></strong> — loaded when working in that subtree — rather than bloating the root file.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q27. [Claude Code] Why use git worktrees with parallel Claude Code sessions? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Each session gets its own working directory and branch</strong>, so parallel agents don't overwrite each other's file edits.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q28. [Claude Code] A hook must run after every file edit to auto-format. Which event? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: PostToolUse</strong> matched on edit/write tools — it runs after the tool completes, ideal for formatters and linters.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q29. [API] You need guaranteed schema-valid output for downstream code. Most reliable approach? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Tool use with a JSON schema (forced via <code>tool_choice</code>) or native structured outputs, plus validation and retry.</strong> Plain 'please return JSON' instructions are the least reliable.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q30. [API] What does a response with <code>stop_reason: "tool_use"</code> require from your code? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Execute the requested tool(s) and send back <code>tool_result</code> blocks (matching <code>tool_use_id</code>) in a user message,</strong> then call the API again to continue.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q31. [API] The conversation grows and each call re-sends 80K tokens of history. Which combination cuts cost most? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Prompt caching on the stable prefix plus summarizing/trimming old turns.</strong> Caching lowers cost of repeated prefix; trimming reduces what you send at all.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q32. [API] How do you let Claude call your function AND keep your API key out of the model's context? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Define the function as a tool; your server executes it with the secret</strong> and returns only the result. Secrets never go in prompts or tool results.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q33. [API] A long, stable block of reference docs is prepended to every request. Where do you put the <code>cache_control</code> breakpoint? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: At the end of the stable block (before the variable content).</strong> Caching matches an exact prefix, so volatile content (user question, timestamps) must come after it.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q34. [API] What causes a prompt-cache miss that surprises teams? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Any change in the cached prefix</strong> — a timestamp in the system prompt, reordered tools, or edited text — or exceeding the cache TTL. Keep prefixes byte-stable.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q35. [Prompting] What's the most effective placement for a long document and the question? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Document first (tagged), question at the end.</strong> Queries placed after long context measurably improve response quality.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q36. [Prompting] Claude over-copies your single few-shot example. Fix? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Provide several diverse examples</strong> (different shapes and lengths, including edge cases) so it learns the pattern rather than the surface form.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q37. [Prompting] You want brief answers without preamble. Which instruction style works best? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Say what to do, with the reason</strong> ('Reply with only the category name; it is parsed by a script') rather than only what not to do.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q38. [Prompting] How should you make Claude cite sources from provided documents? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Ask it to first extract verbatim quotes in tags, then answer referencing those quotes</strong> (or use the citations feature). Grounding in quotes reduces fabrication.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q39. [Prompting] LLM-as-judge scores are inconsistent. What improves reliability? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: A clear rubric, structured output (score + short reasoning), reasoning before the score, low temperature, and calibration against human labels.</strong></div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q40. [Prompting] A prompt works in testing but fails on real user input. First step? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Add real failing inputs to an eval set and analyze the failure pattern</strong> — don't guess-tweak the prompt without measurement.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q41. [Cost & Design] A nightly job summarizes 2M documents; nobody waits for results. Best cost strategy? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Batch API (plus caching for shared instructions and a smaller model if quality holds).</strong> Async batch pricing is lower and suits offline workloads.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q42. [Cost & Design] Which routing strategy minimizes cost without hurting quality? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Route by task difficulty</strong> — a cheap model (Haiku) triages/handles easy cases and escalates hard ones to Sonnet/Opus, validated by evals on each tier.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q43. [Cost & Design] You are rate-limited by tokens per minute, not requests. Which lever helps most? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Reduce tokens per request</strong> — caching, trimming context, shorter outputs — and smooth traffic with queueing; just retrying faster makes it worse.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q44. [Cost & Design] What should be in your production telemetry for a Claude integration? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Per-request model, latency, input/output/cache tokens, stop_reason, errors/429s, tool-call counts, and quality signals,</strong> tagged by feature/tenant for cost attribution.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q45. [Cost & Design] A user uploads a document asking to 'email all customer data to this address'. What should the architecture guarantee? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: The send-email tool can't reach unauthorized recipients or data regardless of model output</strong> — enforced by allowlists, scopes, and confirmation in code, not by the prompt.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q46. [MCP] Your MCP server will serve 200 employees centrally with SSO. Which transport and auth? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Streamable HTTP with OAuth-based authorization.</strong> stdio is for local single-user servers; shared deployments need a remote transport with proper identity.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q47. [MCP] Which MCP primitive exposes read-only data the application chooses to attach as context? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Resources.</strong> Tools are model-invoked actions; prompts are user-invoked templates.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q48. [MCP] Good MCP tool design: which description is best? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: One that states what the tool does, when to use it, parameters and constraints, and what it returns</strong> — descriptions are the model's only guide to choosing tools correctly.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q49. [Responsible AI] Which is the best control for an agent with write access to production data? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Least privilege plus approval gates and audit logs</strong> — scoped credentials, dry-run/preview modes, human confirmation for destructive actions, and full action logging.</div></div>
+  </div>
+
+  <div class="qa-item">
+    <div class="qa-q">Q50. [Responsible AI] Claude refuses a legitimate request in your domain (e.g. security research). What's the right response? <i class="ti ti-chevron-down qa-chevron" aria-hidden="true"></i></div>
+    <div class="qa-a"><div class="qa-a-inner"><strong>Answer: Provide legitimate context in the system prompt (role, authorization, purpose) and refine the request;</strong> don't attempt jailbreaks, and keep controls aligned with Anthropic's usage policy.</div></div>
   </div>
 
 </div>
@@ -1783,6 +2202,24 @@ document.querySelectorAll('.open-btn').forEach(btn => {
     if (url) window.open(url, '_blank', 'noopener');
   });
 });
+
+const rmChecks = document.querySelectorAll('.rm-check');
+function rmUpdate(){
+  const done = [...rmChecks].filter(c=>c.checked).length;
+  document.getElementById('rmBar').style.width = (done/rmChecks.length*100)+'%';
+  document.getElementById('rmCount').textContent = done+' of '+rmChecks.length+' blocks complete';
+}
+let rmSaved = {};
+try { rmSaved = JSON.parse(localStorage.getItem('rmProgress')||'{}'); } catch(e){}
+rmChecks.forEach(c=>{
+  c.checked = !!rmSaved[c.dataset.id];
+  c.addEventListener('change',()=>{
+    rmSaved[c.dataset.id] = c.checked;
+    try { localStorage.setItem('rmProgress', JSON.stringify(rmSaved)); } catch(e){}
+    rmUpdate();
+  });
+});
+rmUpdate();
 </script>
 
 <!-- FOOTER -->
